@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travler</title>
+    <link rel="stylesheet" href="dist/css/main.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-background">
+            <nav class="nav container">
+                <div class="logo">
+                    <a href="#" class="">
+                        <img src="img/header/Logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="menu">
+                    <ul class="list">
+                        <li class="list__li list__li_active">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="list__li">
+                            <a href="#">Services</a>
+                        </li>
+                        <li class="list__li">
+                            <a href="#">Team</a>
+                        </li>
+                        <li class="list__li">
+                            <a href="#">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+    
+            </nav>
+            <div class="slider">
+                <span class="arrow-left" onclick="Slider.prototype.workWithHeader('slider',false)">
+                    <svg width="24" height="44" viewBox="0 0 24 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="Path" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M23.2917 19.921L4.10222 0.70841C3.15777 -0.237139 1.62701 -0.237139 0.708337 0.70841C-0.236112 1.62776 -0.236112 3.16088 0.708337 4.10635L18.2139 21.6331L0.708337 39.1597C-0.236112 40.1052 -0.236112 41.6122 0.708337 42.5577C1.62701 43.5031 3.15777 43.5031 4.10222 42.5577L23.2918 23.3189C24.2361 22.3996 24.2361 20.8665 23.2917 19.921Z"
+                            fill="white" />
+                    </svg>
+                </span>
+                <div class="slider__title zi-2">Mileage Made Simple</div>
+                <div class="slider__subtitle zi-2">Motivation And Your Personal Vision An Unbeatable Force</div>
+                <button class="slider__btn btn">Start Free Trial</button>
+                <div class="slider-radio">
+                    <label class="slider-radio__labael">
+                        <input type="radio" name="slider-radio__labael" id="" class="radio__radio">
+                        <span class="radio__fake" onclick="Slider.prototype.workWithHeader('slider')"></span>
+                    </label>
+                    <label class="slider-radio__labael">
+                        <input type="radio" name="slider-radio__labael" id="" class="radio__radio" checked>
+                        <span class="radio__fake" onclick="Slider.prototype.workWithHeader('slider')"></span>
+                    </label>
+                    <label class="slider-radio__labael">
+                        <input type="radio" name="slider-radio__labael" id="" class="radio__radio">
+                        <span class="radio__fake" onclick="Slider.prototype.workWithHeader('slider')"></span>
+                    </label>
+                </div>
+                <span class="arrow-right" onclick="Slider.prototype.workWithHeader('slider',true)">
+                    <svg width="24" height="44" viewBox="0 0 24 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="Path" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M23.2917 19.921L4.10222 0.70841C3.15777 -0.237139 1.62701 -0.237139 0.708337 0.70841C-0.236112 1.62776 -0.236112 3.16088 0.708337 4.10635L18.2139 21.6331L0.708337 39.1597C-0.236112 40.1052 -0.236112 41.6122 0.708337 42.5577C1.62701 43.5031 3.15777 43.5031 4.10222 42.5577L23.2918 23.3189C24.2361 22.3996 24.2361 20.8665 23.2917 19.921Z"
+                            fill="white" />
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </header>
+    <footer class="footer">
+        <nav class="nav container">
+            <div class="logo">
+                <a href="#" class="">
+                    <img src="img/footer/Logo.svg" alt="">
+                </a>
+            </div>
+            <div class="menu">
+                <ul class="list">
+                    <li class="list__li">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="list__li">
+                        <a href="#">Services</a>
+                    </li>
+                    <li class="list__li">
+                        <a href="#">Team</a>
+                    </li>
+                    <li class="list__li">
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="all-rights">
+                <span class="all-rights__date">
+                    © UpQode 2019.
+                </span>
+                <span class="all-rights__reserved">
+                    All Rights Reserved.
+                </span>
+            </div>
+
+        </nav>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
