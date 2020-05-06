@@ -10,66 +10,199 @@
 
 <body>
     <header class="header">
-        <div class="header-background">
-            <nav class="nav container">
-                <div class="logo">
-                    <a href="#" class="">
-                        <img src="img/header/Logo.svg" alt="">
-                    </a>
-                </div>
-                <div class="menu">
-                    <ul class="list">
-                        <li class="list__li list__li_active">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="list__li">
-                            <a href="#">Services</a>
-                        </li>
-                        <li class="list__li">
-                            <a href="#">Team</a>
-                        </li>
-                        <li class="list__li">
-                            <a href="#">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-    
-            </nav>
-            <div class="slider">
-                <span class="arrow-left" onclick="Slider.prototype.workWithHeader('slider',false)">
-                    <svg width="24" height="44" viewBox="0 0 24 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path id="Path" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M23.2917 19.921L4.10222 0.70841C3.15777 -0.237139 1.62701 -0.237139 0.708337 0.70841C-0.236112 1.62776 -0.236112 3.16088 0.708337 4.10635L18.2139 21.6331L0.708337 39.1597C-0.236112 40.1052 -0.236112 41.6122 0.708337 42.5577C1.62701 43.5031 3.15777 43.5031 4.10222 42.5577L23.2918 23.3189C24.2361 22.3996 24.2361 20.8665 23.2917 19.921Z"
-                            fill="white" />
-                    </svg>
-                </span>
-                <div class="slider__title zi-2">Mileage Made Simple</div>
-                <div class="slider__subtitle zi-2">Motivation And Your Personal Vision An Unbeatable Force</div>
-                <button class="slider__btn btn">Start Free Trial</button>
-                <div class="slider-radio">
-                    <label class="slider-radio__labael">
-                        <input type="radio" name="slider-radio__labael" id="" class="radio__radio">
-                        <span class="radio__fake" onclick="Slider.prototype.workWithHeader('slider')"></span>
-                    </label>
-                    <label class="slider-radio__labael">
-                        <input type="radio" name="slider-radio__labael" id="" class="radio__radio" checked>
-                        <span class="radio__fake" onclick="Slider.prototype.workWithHeader('slider')"></span>
-                    </label>
-                    <label class="slider-radio__labael">
-                        <input type="radio" name="slider-radio__labael" id="" class="radio__radio">
-                        <span class="radio__fake" onclick="Slider.prototype.workWithHeader('slider')"></span>
-                    </label>
-                </div>
-                <span class="arrow-right" onclick="Slider.prototype.workWithHeader('slider',true)">
-                    <svg width="24" height="44" viewBox="0 0 24 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path id="Path" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M23.2917 19.921L4.10222 0.70841C3.15777 -0.237139 1.62701 -0.237139 0.708337 0.70841C-0.236112 1.62776 -0.236112 3.16088 0.708337 4.10635L18.2139 21.6331L0.708337 39.1597C-0.236112 40.1052 -0.236112 41.6122 0.708337 42.5577C1.62701 43.5031 3.15777 43.5031 4.10222 42.5577L23.2918 23.3189C24.2361 22.3996 24.2361 20.8665 23.2917 19.921Z"
-                            fill="white" />
-                    </svg>
-                </span>
+        <nav class="nav container">
+            <div class="logo">
+                <a href="#" class="">
+                    <img src="img/header/Logo.svg" alt="">
+                </a>
             </div>
+            <div class="menu">
+                <ul class="list">
+                    <li class="list__li list__li_active">
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="list__li">
+                        <a href="#">Services</a>
+                    </li>
+                    <li class="list__li">
+                        <a href="#">Team</a>
+                    </li>
+                    <li class="list__li">
+                        <a href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <div class="slider">
+            <span class="arrow-left" onclick="Slider.prototype.workWithHeader('slider',false)">
+                <svg width="24" height="44" viewBox="0 0 24 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Path" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M23.2917 19.921L4.10222 0.70841C3.15777 -0.237139 1.62701 -0.237139 0.708337 0.70841C-0.236112 1.62776 -0.236112 3.16088 0.708337 4.10635L18.2139 21.6331L0.708337 39.1597C-0.236112 40.1052 -0.236112 41.6122 0.708337 42.5577C1.62701 43.5031 3.15777 43.5031 4.10222 42.5577L23.2918 23.3189C24.2361 22.3996 24.2361 20.8665 23.2917 19.921Z"
+                        fill="white" />
+                </svg>
+            </span>
+            <div class="slider__title zi-2">Mileage Made Simple</div>
+            <div class="slider__subtitle zi-2">Motivation And Your Personal Vision An Unbeatable Force</div>
+            <button class="slider__btn btn">Start Free Trial</button>
+            <div class="slider-radio">
+                <label class="slider-radio__labael">
+                    <input type="radio" name="slider-radio__labael" id="" class="radio__radio">
+                    <span class="radio__fake" onclick="Slider.prototype.workWithHeader('slider')"></span>
+                </label>
+                <label class="slider-radio__labael">
+                    <input type="radio" name="slider-radio__labael" id="" class="radio__radio" checked>
+                    <span class="radio__fake" onclick="Slider.prototype.workWithHeader('slider')"></span>
+                </label>
+                <label class="slider-radio__labael">
+                    <input type="radio" name="slider-radio__labael" id="" class="radio__radio">
+                    <span class="radio__fake" onclick="Slider.prototype.workWithHeader('slider')"></span>
+                </label>
+            </div>
+            <span class="arrow-right" onclick="Slider.prototype.workWithHeader('slider',true)">
+                <svg width="24" height="44" viewBox="0 0 24 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="Path" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M23.2917 19.921L4.10222 0.70841C3.15777 -0.237139 1.62701 -0.237139 0.708337 0.70841C-0.236112 1.62776 -0.236112 3.16088 0.708337 4.10635L18.2139 21.6331L0.708337 39.1597C-0.236112 40.1052 -0.236112 41.6122 0.708337 42.5577C1.62701 43.5031 3.15777 43.5031 4.10222 42.5577L23.2918 23.3189C24.2361 22.3996 24.2361 20.8665 23.2917 19.921Z"
+                        fill="white" />
+                </svg>
+            </span>
         </div>
     </header>
+    <section class="services container">
+        <div class="row">
+            <div class="phone">
+                <img src="img/services/bg_for_phone.png" alt="">
+                <img src="img/services/phone.png" alt="">
+            </div>
+            <div class="describe">
+                <span class="describe__title">Track every trip you make</span>
+                <span class="describe__subtitle">Every one of your trips is captured immdiately and is never
+                    forgotten.</span>
+                <ul class="done-list">
+                    <li class="done-list__li">
+                        <img src="img/services/done.png" class="class=" done-list__ico" alt="">
+                        <span class="done-list__text">
+                            No signal dropout
+                        </span>
+                    </li>
+                    <li class="done-list__li">
+                        <img src="img/services/done.png" class="class=" done-list__ico" alt="">
+                        <span class="done-list__text">
+                            No missed trips
+                        </span>
+                    </li>
+                </ul>
+                <button class="describe__btn">
+                    <span class="describe__btn-text">
+                        learn more
+                    </span>
+                    <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 5L24 3.03571L22.0357 1" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M23 3H13" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M6 3H9" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M1 3H2" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+
+                </button>
+            </div>
+        </div>
+        <div class="row services__row_2">
+            <div class="phone">
+                <img src="img/services/bg_for_phone.png" alt="">
+                <img src="img/services/phone.png" alt="">
+            </div>
+            <div class="describe">
+                <span class="describe__title">Classify with a single swipe</span>
+                <span class="describe__subtitle">Swipe right for business. Swipe left for personal. It’s as easy as
+                    that.</span>
+                <ul class="done-list">
+                    <li class="done-list__li">
+                        <img src="img/services/done.png" class="class=" done-list__ico" alt="">
+                        <span class="done-list__text">
+                            Review trips on the go
+                        </span>
+                    </li>
+                    <li class="done-list__li">
+                        <img src="img/services/done.png" class="class=" done-list__ico" alt="">
+                        <span class="done-list__text">
+                            Classify journeys in seconds
+                        </span>
+                    </li>
+                </ul>
+                <button class="describe__btn">
+                    <span class="describe__btn-text">
+                        learn more
+                    </span>
+                    <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 5L24 3.03571L22.0357 1" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M23 3H13" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M6 3H9" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M1 3H2" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+
+                </button>
+            </div>
+        </div>
+        <div class="row services__row_3">
+            <div class="phone">
+                <img src="img/services/bg_for_phone.png" alt="">
+                <img src="img/services/phone.png" alt="">
+            </div>
+            <div class="describe">
+                <span class="describe__title">Claim your money back with ease</span>
+                <span class="describe__subtitle">Claiming mileage has never been so easy, with all calculations done for
+                    you.
+                </span>
+                <ul class="done-list">
+                    <li class="done-list__li">
+                        <img src="img/services/done.png" class="class=" done-list__ico" alt="">
+                        <span class="done-list__text">
+                            100% HMRC compliance
+                        </span>
+                    </li>
+                    <li class="done-list__li">
+                        <img src="img/services/done.png" class="class=" done-list__ico" alt="">
+                        <span class="done-list__text">
+                            All logs in one place
+                        </span>
+                    </li>
+                </ul>
+                <button class="describe__btn">
+                    <span class="describe__btn-text">
+                        learn more
+                    </span>
+                    <svg width="25" height="6" viewBox="0 0 25 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 5L24 3.03571L22.0357 1" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M23 3H13" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M6 3H9" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <path d="M1 3H2" stroke="#00A031" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+
+                </button>
+            </div>
+        </div>
+        <div class="road">
+            <svg width="664" height="1216" viewBox="0 0 664 1216" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="Line">
+                    <path id="Path 2" d="M22.9998 1C22.9998 1 649.558 119 663 589.542C655.833 1135 1 1215 1 1215"
+                        stroke="#29A0EC" />
+                </g>
+            </svg>
+        </div>
+
+    </section>
     <footer class="footer">
         <nav class="nav container">
             <div class="logo">
