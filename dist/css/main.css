@@ -983,7 +983,11 @@ table {
   font-size: 18px;
   line-height: 28px;
   letter-spacing: 0.2px;
-  color: #00A031;
+  color: #000;
+}
+
+.map__location .location__description .description_title_active {
+  color: #00A031 !important;
 }
 
 .map__location .location__description .description__subtitle {
@@ -1008,7 +1012,6 @@ table {
   height: 756px;
   left: 108px;
   top: 1px;
-  background-color: red;
   z-index: 1;
 }
 
@@ -1022,12 +1025,13 @@ table {
   left: 588px;
   top: 138px;
   width: 262px;
-  height: 467px;
+  min-height: 407px;
   background-color: #fff;
   z-index: 2;
   padding-top: 27px;
   padding-left: 58px;
   display: flex;
+  padding-bottom: 60px;
   flex-direction: column;
   box-shadow: 0 0 40px 5px #bbb;
 }
@@ -1118,5 +1122,9 @@ table {
   line-height: 24px;
   letter-spacing: 0.2px;
   color: #222222;
+}
+
+.description__title_active {
+  color: #00A031 !important;
 }
 /*# sourceMappingURL=main.css.map */

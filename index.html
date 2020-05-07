@@ -277,7 +277,7 @@
                 Venaville, New York 10010
             </span>
             <ul class="map__locations">
-                <li class="map__location">
+                <li class="map__location" onclick="getMapData(0)">
                     <div class="location__icon">
                         <img src="img/map/map.png" alt="">
                     </div>
@@ -286,24 +286,24 @@
                             Los Angeles, USA
                         </span>
                         <span class="description__subtitle">
-                            2005 Stokes Isle Apt. 896, Venaville, New York 10010
+                            2005 Stokes Isle Apt. 896, Los Angeles 10010
                         </span>
                     </div>
                 </li>
-                <li class="map__location">
+                <li class="map__location" onclick="getMapData(1)">
                     <div class="location__icon">
                         <img src="img/map/map.png" alt="">
                     </div>
                     <div class="location__description">
                         <span class="description__title">
-                            NewYork, USA
+                            New York, USA
                         </span>
                         <span class="description__subtitle">
-                            2005 Stokes Isle Apt. 896, Venaville, New York 10010
+                            2005 Stokes Isle Apt. 896, New York 10010
                         </span>
                     </div>
                 </li>
-                <li class="map__location">
+                <li class="map__location" onclick="getMapData(2)">
                     <div class="location__icon location__icon_2">
                         <img src="img/map/map.png" alt="">
                     </div>
@@ -312,11 +312,11 @@
                             Boston, USA
                         </span>
                         <span class="description__subtitle">
-                            2005 Stokes Isle Apt. 896, Venaville, New York 10010
+                            2005 Stokes Isle Apt. 896, Boston 10010
                         </span>
                     </div>
                 </li>
-                <li class="map__location">
+                <li class="map__location" onclick="getMapData(3)">
                     <div class="location__icon">
                         <img src="img/map/map.png" alt="">
                     </div>
@@ -325,25 +325,20 @@
                             Detroit, USA
                         </span>
                         <span class="description__subtitle">
-                            2005 Stokes Isle Apt. 896, Venaville, New York 10010
+                            2005 Stokes Isle Apt. 896, Detroit 10010
                         </span>
                     </div>
                 </li>
             </ul>
         </div>
         <div class="map-card">
-            <div class="google-map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d48923.99207183032!2d24.064560577348406!3d49.87532036641743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sua!4v1588801997393!5m2!1suk!2sua"
-                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0">
-                </iframe>
+            <div class="google-map" id="map">
             </div>
             <div class="map-details">
                 <span class="map-details__title">
                     NewYork
                 </span>
-                <span class="description__subtitle">
+                <span class="description__subtitle" id="map-subtitle">
                     2005 Stokes Isle Apt. 896,
                     New York 10010
                 </span>
@@ -419,6 +414,9 @@
         </nav>
     </footer>
     <script src="script.js"></script>
+   <script async defer
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjS0-kWgQC7m3Lv_8yeLpo1E9Pr2Wc0PI&callback=initMap"
+       type="text/javascript"></script>
 </body>
 
 </html>
