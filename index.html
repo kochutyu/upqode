@@ -10,7 +10,7 @@
 
 <body>
     <header class="header" id="home">
-        <nav class="nav nav-fixed">
+        <nav class="nav">
             <div class="container navbar">
                 <div class="logo">
                     <a href="#home" class="">
@@ -19,16 +19,16 @@
                 </div>
                 <div class="menu">
                     <ul class="list">
-                        <li class="list__li list__li_active">
+                        <li class="list__li list__li_active navbar_li" onclick="navbar(0)">
                             <a href="#home">Home</a>
                         </li>
-                        <li class="list__li">
+                        <li class="list__li navbar_li" onclick="navbar(1)">
                             <a href="#services">Services</a>
                         </li>
-                        <li class="list__li">
+                        <li class="list__li navbar_li" onclick="navbar(2)">
                             <a href="#team">Team</a>
                         </li>
-                        <li class="list__li">
+                        <li class="list__li navbar_li" onclick="navbar(3)">
                             <a href="#contact">Contact Us</a>
                         </li>
                     </ul>
@@ -407,16 +407,16 @@
             </div>
             <div class="menu">
                 <ul class="list">
-                    <li class="list__li">
+                    <li class="list__li" onclick="navbar(0)">
                         <a href="#home">Home</a>
                     </li>
-                    <li class="list__li">
+                    <li class="list__li" onclick="navbar(1)">
                         <a href="#services">Services</a>
                     </li>
-                    <li class="list__li">
+                    <li class="list__li" onclick="navbar(2)">
                         <a href="#team">Team</a>
                     </li>
-                    <li class="list__li">
+                    <li class="list__li" onclick="navbar(3)">
                         <a href="#contact">Contact Us</a>
                     </li>
                 </ul>

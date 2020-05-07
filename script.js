@@ -1,7 +1,9 @@
 "use strict"
 window.addEventListener('load', () => {
     // Animation.prototype.menu()
+    window.location.href = 'http://127.0.0.1:5500/#home';
     fixedNav()
+    navbar();
 })
 
 window.addEventListener('scroll', () => {
@@ -25,7 +27,7 @@ class Animation {
         const arrowLeft = document.querySelector('.arrow-left img');
     }
 
-} 
+}
 
 
 function fixedNav() {
@@ -35,11 +37,22 @@ function fixedNav() {
     if (scroll > 60) {
         navbar.classList.add('nav-fixed')
         for (const iterator of container) {
-            
+
         }
-        
+
     } else {
         navbar.classList.remove('nav-fixed')
+    }
+}
+
+function navbar(item = 0) {
+    const li = document.querySelectorAll('.navbar_li');
+    for (let i = 0; i < li.length; i++) {
+        if (item === i) {
+            li[i].classList.add('list__li_active')
+        } else {
+            li[i].classList.remove('list__li_active')
+        }
     }
 }
 
