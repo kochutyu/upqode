@@ -21,9 +21,21 @@
 //? ------------------------------------------------------------------------------------------------------------------------------
 //?                                         Large screens min-width : 1824px
 //? ------------------------------------------------------------------------------------------------------------------------------
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    overflow: hidden;
+}
+
+
 .container {
     width: $container;
     margin: 0 auto;
+    overflow: hidden;
+    height: 100%;
 }
 
 .btn {
@@ -74,11 +86,13 @@
 
 .nav {
     position: fixed;
-    top: 0;
-    left: 0;
     right: 0;
     transition: 0.2s;
     z-index: 8;
+    display: flex;
+    width: 100%;
+
+    .container {}
 }
 
 .navbar {
@@ -160,7 +174,7 @@
 }
 
 .logo {
-    margin-left: 25px;
+    margin-left: 26px;
 }
 
 .menu {}
@@ -337,21 +351,21 @@
                 &__li {
                     margin-right: 75px;
 
-                    &:nth-child(1) {
-                        left: 78px;
-                    }
+                    // &:nth-child(1) {
+                    //     left: 78px;
+                    // }
 
-                    &:nth-child(2) {
-                        left: 66px;
-                    }
+                    // &:nth-child(2) {
+                    //     left: 66px;
+                    // }
 
-                    &:nth-child(3) {
-                        left: 40px;
-                    }
+                    // &:nth-child(3) {
+                    //     left: 40px;
+                    // }
 
-                    &:nth-child(4) {
-                        left: 14px;
-                    }
+                    // &:nth-child(4) {
+                    //     left: 14px;
+                    // }
 
                     a {
                         font-family: 'Gilroy-Light';
@@ -840,15 +854,17 @@
 }
 
 .map {
-    width: 1253px;
     height: 761;
     margin-top: 114px;
     padding-top: 93px;
     display: flex;
+    position: relative;
 
     .map-describe {
         display: flex;
         flex-direction: column;
+        position: relative;
+        left: -26px;
 
         .map__title {
             font-family: Poppins;
@@ -968,14 +984,14 @@
 
     .map-card {
         position: relative;
-        left: -24px;
+        left: 61px;
+        height: 755px;
+        width: 702px;
 
         .google-map {
             position: absolute;
-            width: 702px;
-            height: 756px;
-            left: 108px;
-            top: 1px;
+            width: inherit;
+            height: inherit;
             z-index: 1;
 
             iframe {
@@ -986,8 +1002,8 @@
 
         .map-details {
             position: absolute;
-            left: 588px;
-            top: 138px;
+            left: 480px;
+            top: 135px;
             width: 262px;
             min-height: 407px;
             background-color: #fff;
@@ -1098,47 +1114,110 @@
     box-shadow: 10px 10px 40px 5px #bbb !important;
 }
 
-html {
-    scroll-behavior: smooth
+
+@media only screen and (max-width : 1230px) {
+    $container: 100%;
+
+    .container {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .map {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__title {
+
+            &:nth-child(1),
+            &:nth-child(2) {
+                left: 0 !important;
+            }
+        }
+
+        &__subtitle {
+            text-align: center;
+            width: 100% !important;
+            left: 0 !important;
+        }
+
+
+        .map-describe {
+            display: flex;
+            align-items: center;
+            position: static;
+
+        }
+
+        &__locations {
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 611px;
+            height: 337px;
+            position: static;
+        }
+
+        &__location {
+
+            .location__icon {
+                width: 105px;
+
+                svg {}
+
+                .location__icon_svg {}
+            }
+
+            .location__icon_2 img {}
+
+            .location__description {
+                .description {
+                    &__title {}
+
+                    &_title_active {}
+
+                    &__subtitle {}
+                }
+            }
+
+        }
+
+        .map-card {
+            position: relative;
+            margin-top: 400px;
+            left: 0;
+            width: calc(100% - 50px);
+
+            .google-map {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+
+
+                iframe {
+                    width: 100%;
+                }
+            }
+
+            .map-details {
+                position: absolute;
+                left: 50%;
+                top: -350px;
+                width: 365px;
+                padding: 27px 58px;
+                transform: translate(-50%, 0);
+
+                &__title {}
+
+                .description__subtitle {
+                    width: 100%;
+                }
+
+
+
+            }
+        }
+    }
 }
-
-//? ------------------------------------------------------------------------------------------------------------------------------
-//?                                          iPads (Portrait and Landscaping)
-//? ------------------------------------------------------------------------------------------------------------------------------
-@media only screen and (min-width : 1224px) {}
-
-//? ------------------------------------------------------------------------------------------------------------------------------
-//?                                          iPads (Portrait and Landscaping)
-//? ------------------------------------------------------------------------------------------------------------------------------
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
-
-//? ------------------------------------------------------------------------------------------------------------------------------
-//?                                                iPads (Landscaping)
-//? ------------------------------------------------------------------------------------------------------------------------------
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
-
-//? ------------------------------------------------------------------------------------------------------------------------------
-//?                                                  iPads (Portrait)
-//? ------------------------------------------------------------------------------------------------------------------------------
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
-
-//? ------------------------------------------------------------------------------------------------------------------------------
-//?                                          Smartphones (portrait and landscape)
-//? ------------------------------------------------------------------------------------------------------------------------------
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {}
-
-//? ------------------------------------------------------------------------------------------------------------------------------
-//?                                               Smartphones (landscape)
-//? ------------------------------------------------------------------------------------------------------------------------------
-@media only screen and (min-width : 321px) {}
-
-//? ------------------------------------------------------------------------------------------------------------------------------
-//?                                               Smartphones (portrait)
-//? ------------------------------------------------------------------------------------------------------------------------------
-@media only screen and (max-width : 320px) {}
-
-//? ------------------------------------------------------------------------------------------------------------------------------
-//?                                                     iPhone 4
-//? ------------------------------------------------------------------------------------------------------------------------------
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {}
