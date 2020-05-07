@@ -881,20 +881,25 @@
         display: flex;
         width: 270px;
         height: 128px;
-        transition: 0.3s cubic-bezier(.17, .67, .83, .67);
+        transition: 0.2s linear;
 
-        &:hover {
-            box-shadow: 15px 15px 60px 5px #bbb;
+        &:hover{
             cursor: pointer;
         }
 
         .location__icon {
             width: 105px;
-
-            img {
+            svg{
                 position: relative;
                 top: 33px;
                 left: 13px;
+                fill: #000;
+                stroke: #000;
+            }
+
+            .location__icon_svg {
+                fill: #00A031;
+                stroke: #00A031;
             }
         }
 
@@ -1063,6 +1068,14 @@
 
 .description__title_active {
     color: #00A031 !important;
+}
+
+.map__location_active{
+    box-shadow: 10px 10px 40px 5px #bbb !important;
+}
+
+html {
+    scroll-behavior: smooth
 }
 
 //? ------------------------------------------------------------------------------------------------------------------------------

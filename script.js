@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
     // Animation.prototype.menu()
     // Animation.prototype.Slider()
+    getMapData(0)
 })
 
 window.addEventListener('scroll', () => {
@@ -14,16 +15,6 @@ class Animation {
         const list = document.querySelector('.list').children;
 
         for (const li of list) {
-            // li.addEventListener('mouseover', () => {
-            //     li.classList.add('list__li_active')
-
-
-            //     li.addEventListener('mouseout', () => {
-            //         li.classList.remove('list__li_active')
-
-
-            //     })
-            // })
             li.addEventListener('click', () => {
                 li.classList.add('list__li_active');
             })
@@ -31,16 +22,6 @@ class Animation {
     }
     Slider() {
         const arrowLeft = document.querySelector('.arrow-left img');
-
-        // arrowLeft.addEventListener('mouseover', () => {
-        //     arrowLeft.setAttribute('src', 'img/header/Path-1.svg')
-        // })
-
-        // li.addEventListener('mouseout', () => {
-        //     li.classList.remove('list__li_active')
-
-
-        // })
     }
 }
 
@@ -84,6 +65,7 @@ class Slider {
         const radioIndex = this.getRadioIndex(section, nextSlide);
         const title = document.querySelector('.slider__title');
         const subTitle = document.querySelector('.slider__subtitle');
+
         switch (radioIndex) {
             case 0:
                 title.textContent = 'Slide 1'
@@ -101,35 +83,36 @@ class Slider {
 }
 
 
-function getMapData(state = 1) {
+function getMapData(state) {
     const listMap = document.querySelector('.map__locations').children;
     const li = listMap[state];
     const titleOfActiveState = listMap[state].children[1].children[0];
     const subtitleOfActiveState = listMap[state].children[1].children[1];
-
-
-    const subInfo = document.getElementById('map-subtitle');
-    subInfo.textContent = subtitleOfActiveState.textContent
-
-    // Set style for active state
-    titleOfActiveState.classList.add('description__title_active');
-    li.classList.add('map__location_active');
-
-
-    const mapDateilsState = document.querySelector('.map-details__title');
-    mapDateilsState.textContent = titleOfActiveState.textContent
-
     for (let i = 0; i < listMap.length; i++) { // remove style for not active
         if (i !== state) {
             listMap[i].children[1].children[0].classList.remove('description__title_active');
-            
-        } else { }
-        if (!listMap[i].classList.contains('map__location_active') && i !== state) {
-            li.classList.remove('map__location_active')
+            listMap[i].classList.remove('map__location_active')
+            document.querySelectorAll('.map-icon')[i].children[0].classList.remove('location__icon_svg');
+            // document.querySelectorAll('.location__icon')[state].children[0].classList.add('location__icon_svg')
+
         }
-        console.log(listMap[i].classList.contains('map__location_active'));
+        if (i === state) {
+            listMap[i].classList.add('map__location_active');
+            document.querySelectorAll('.map-icon')[i].children[0].classList.add('location__icon_svg');
+        }
     }
-    console.log(document.querySelectorAll('.description__subtitle'));
+
+    // Set style for active state
+    titleOfActiveState.classList.add('description__title_active');
+
+
+
+    const subtitleInfo = document.getElementById('map-subtitle');
+    subtitleInfo.textContent = subtitleOfActiveState.textContent
+
+    const titleInfo = document.querySelector('.map-details__title');
+    titleInfo.textContent = titleOfActiveState.textContent
+
 
     initMap(state)
 }
@@ -153,7 +136,8 @@ const mapCoordinates = [{
     }
 ]
 
-function initMap(state = 0) {
+function initMap(state = 2) {
+
     // The location of Uluru
     var uluru = {
         lat: 49.84,
@@ -166,7 +150,6 @@ function initMap(state = 0) {
     var map = new google.maps.Map(
         document.getElementById('map'), {
             zoom: 18,
-            mapTypeControl: false,
             scaleControl: false,
             zoomControl: false,
             center: mapCoordinates[state],
