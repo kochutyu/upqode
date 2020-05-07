@@ -1,11 +1,12 @@
+"use strict"
 window.addEventListener('load', () => {
     // Animation.prototype.menu()
-    // Animation.prototype.Slider()
-    getMapData(0)
+    fixedNav()
 })
 
 window.addEventListener('scroll', () => {
     // Animation.prototype.menu()
+    fixedNav()
 
 })
 
@@ -20,8 +21,25 @@ class Animation {
             })
         }
     }
-    Slider() {
+    slider() {
         const arrowLeft = document.querySelector('.arrow-left img');
+    }
+
+} 
+
+
+function fixedNav() {
+    const scroll = window.pageYOffset;
+    const navbar = document.querySelector('.nav');
+    const container = document.querySelectorAll('.container');
+    if (scroll > 60) {
+        navbar.classList.add('nav-fixed')
+        for (const iterator of container) {
+            
+        }
+        
+    } else {
+        navbar.classList.remove('nav-fixed')
     }
 }
 

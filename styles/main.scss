@@ -73,11 +73,26 @@
 }
 
 .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.2s;
+    z-index: 8;
+}
+
+.navbar {
+    padding-bottom: 26px;
     padding-top: 26px;
     display: flex;
     justify-content: space-between;
-    position: relative;
-    z-index: 2;
+}
+
+.nav-fixed {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    position: fixed;
+    z-index: 8;
+    overflow: hidden;
 }
 
 
@@ -150,10 +165,11 @@
 .menu {}
 
 .slider {
-    margin-top: 290px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    top: 358px;
 
     .slider__title {
         font-family: Poppins;
@@ -260,7 +276,7 @@
 
 .arrow-left {
     position: absolute;
-    top: 46.5%;
+    top: 60%;
     left: 169px;
     transform: translate(0, -50%) scale(-1, -1);
 
@@ -277,7 +293,7 @@
 
 .arrow-right {
     position: absolute;
-    top: 46.5%;
+    top: 60%;
     right: 169px;
     transform: translate(0, -50%);
 
@@ -296,12 +312,15 @@
     height: 344px;
     background: #222222;
     position: relative;
-    top: 233px;
+    top: 231px;
+    text-align: center;
 
     .nav {
         flex-direction: column;
         align-items: center;
         padding-top: 88px;
+        padding-bottom: 0;
+        position: relative;
 
         .logo {
             position: relative;
@@ -311,6 +330,8 @@
         .menu {
             .list {
                 top: 45px;
+                left: 50%;
+                transform: translate(-316px, 0);
 
                 &__li {
                     margin-right: 75px;
@@ -376,8 +397,7 @@
 .services {
     width: 1206px;
     height: 2038px;
-    // margin-top: 92px;
-    margin-top: 91px;
+    padding-top: 93px;
     position: relative;
 }
 
@@ -426,7 +446,7 @@
 
 .services__row_2 {
     position: absolute;
-    top: 728px;
+    top: 819px;
     left: 47px;
     flex-direction: row-reverse;
 
@@ -553,14 +573,14 @@
         .describe__btn-text {
             position: relative;
             left: 39px;
-            top: 1px;
+            top: -2px;
         }
     }
 }
 
 .road {
     position: absolute;
-    top: 361px;
+    top: 452px;
     left: 281px;
     z-index: -1;
 }
@@ -569,7 +589,8 @@
     display: flex;
     width: 1165px;
     min-height: 534px;
-    margin-top: 244px;
+    margin-top: 151px;
+    padding-top: 93px;
 }
 
 
@@ -820,7 +841,8 @@
 .map {
     width: 1253px;
     height: 761;
-    margin-top: 207px;
+    margin-top: 114px;
+    padding-top: 93px;
     display: flex;
 
     .map-describe {
@@ -883,13 +905,14 @@
         height: 128px;
         transition: 0.2s linear;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
         }
 
         .location__icon {
             width: 105px;
-            svg{
+
+            svg {
                 position: relative;
                 top: 33px;
                 left: 13px;
@@ -1070,7 +1093,7 @@
     color: #00A031 !important;
 }
 
-.map__location_active{
+.map__location_active {
     box-shadow: 10px 10px 40px 5px #bbb !important;
 }
 

@@ -192,11 +192,26 @@ table {
 }
 
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.2s;
+  z-index: 8;
+}
+
+.navbar {
+  padding-bottom: 26px;
   padding-top: 26px;
   display: flex;
   justify-content: space-between;
-  position: relative;
-  z-index: 2;
+}
+
+.nav-fixed {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  position: fixed;
+  z-index: 8;
+  overflow: hidden;
 }
 
 .list {
@@ -259,10 +274,11 @@ table {
 }
 
 .slider {
-  margin-top: 290px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  top: 358px;
 }
 
 .slider .slider__title {
@@ -367,7 +383,7 @@ table {
 
 .arrow-left {
   position: absolute;
-  top: 46.5%;
+  top: 60%;
   left: 169px;
   transform: translate(0, -50%) scale(-1, -1);
   z-index: 2;
@@ -383,7 +399,7 @@ table {
 
 .arrow-right {
   position: absolute;
-  top: 46.5%;
+  top: 60%;
   right: 169px;
   transform: translate(0, -50%);
   z-index: 2;
@@ -401,13 +417,16 @@ table {
   height: 344px;
   background: #222222;
   position: relative;
-  top: 233px;
+  top: 231px;
+  text-align: center;
 }
 
 .footer .nav {
   flex-direction: column;
   align-items: center;
   padding-top: 88px;
+  padding-bottom: 0;
+  position: relative;
 }
 
 .footer .nav .logo {
@@ -417,6 +436,8 @@ table {
 
 .footer .nav .menu .list {
   top: 45px;
+  left: 50%;
+  transform: translate(-316px, 0);
 }
 
 .footer .nav .menu .list__li {
@@ -475,7 +496,7 @@ table {
 .services {
   width: 1206px;
   height: 2038px;
-  margin-top: 91px;
+  padding-top: 93px;
   position: relative;
 }
 
@@ -522,7 +543,7 @@ table {
 
 .services__row_2 {
   position: absolute;
-  top: 728px;
+  top: 819px;
   left: 47px;
   flex-direction: row-reverse;
 }
@@ -645,12 +666,12 @@ table {
 .describe__btn .describe__btn-text {
   position: relative;
   left: 39px;
-  top: 1px;
+  top: -2px;
 }
 
 .road {
   position: absolute;
-  top: 361px;
+  top: 452px;
   left: 281px;
   z-index: -1;
 }
@@ -659,7 +680,8 @@ table {
   display: flex;
   width: 1165px;
   min-height: 534px;
-  margin-top: 244px;
+  margin-top: 151px;
+  padding-top: 93px;
 }
 
 .describe__team {
@@ -891,7 +913,8 @@ table {
 .map {
   width: 1253px;
   height: 761;
-  margin-top: 207px;
+  margin-top: 114px;
+  padding-top: 93px;
   display: flex;
 }
 
