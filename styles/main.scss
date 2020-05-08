@@ -1112,13 +1112,29 @@ section {
     box-shadow: 10px 10px 40px 5px #bbb !important;
 }
 
+@media only screen and (max-width : 1200px) {
+    .road {
+        display: none;
+    }
+
+    .services {
+        width: calc(100% - 50px) !important;
+    }
+
+    .row {
+        .phone {
+            transition: 2update s linear;
+            opacity: .5;
+        }
+    }
+}
 
 @media only screen and (max-width : 1230px) {
     $container: 100%;
 
     .container {
         width: 100%;
-        overflow: hidden;
+        // overflow: hidden;
     }
 
     .team {
