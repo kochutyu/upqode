@@ -1163,6 +1163,61 @@ section {
     width: 100%;
     overflow: hidden;
   }
+  .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: calc(100% - 400px);
+  }
+  .describe__team {
+    position: static;
+    align-items: center;
+  }
+  .describe__social-networks {
+    justify-content: center;
+  }
+  .describe__title_team {
+    position: relative;
+    left: 0;
+  }
+  .describe__subtitle_author {
+    position: relative;
+    left: 0;
+  }
+  .describe__subtitle_team {
+    position: relative;
+    left: 0;
+    margin: 0 auto;
+    width: inherit;
+  }
+  .describe__social-network {
+    position: relative;
+    left: 0;
+    margin-right: 40px;
+  }
+  .describe__social-network:nth-child(2) {
+    left: 0;
+  }
+  .describe__social-network:nth-child(3) {
+    left: 0;
+    margin-right: 0;
+  }
+  .slider-user {
+    position: relative;
+    width: inherit;
+    left: 0;
+    top: 545px;
+  }
+  .photos {
+    position: relative;
+    width: 100%;
+    height: 532px;
+    margin-top: 25px;
+    left: 73%;
+    transform: translate(-50%, 0);
+    top: -155px;
+  }
   .map {
     display: flex;
     flex-direction: column;
