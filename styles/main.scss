@@ -327,8 +327,12 @@ section {
     height: 344px;
     background: #222222;
     position: relative;
-    top: 231px;
+    top: 190px;
     text-align: center;
+    overflow: hidden;
+    &__nav{
+        padding-top: 88px !important;
+    }
 
     .nav {
         flex-direction: column;
@@ -351,21 +355,21 @@ section {
                 &__li {
                     margin-right: 75px;
 
-                    // &:nth-child(1) {
-                    //     left: 78px;
-                    // }
+                    &:nth-child(1) {
+                        left: 78px;
+                    }
 
-                    // &:nth-child(2) {
-                    //     left: 66px;
-                    // }
+                    &:nth-child(2) {
+                        left: 66px;
+                    }
 
-                    // &:nth-child(3) {
-                    //     left: 40px;
-                    // }
+                    &:nth-child(3) {
+                        left: 40px;
+                    }
 
-                    // &:nth-child(4) {
-                    //     left: 14px;
-                    // }
+                    &:nth-child(4) {
+                        left: 14px;
+                    }
 
                     a {
                         font-family: 'Gilroy-Light';

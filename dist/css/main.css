@@ -428,8 +428,13 @@ section {
   height: 344px;
   background: #222222;
   position: relative;
-  top: 231px;
+  top: 190px;
   text-align: center;
+  overflow: hidden;
+}
+
+.footer__nav {
+  padding-top: 88px !important;
 }
 
 .footer .nav {
@@ -453,6 +458,22 @@ section {
 
 .footer .nav .menu .list__li {
   margin-right: 75px;
+}
+
+.footer .nav .menu .list__li:nth-child(1) {
+  left: 78px;
+}
+
+.footer .nav .menu .list__li:nth-child(2) {
+  left: 66px;
+}
+
+.footer .nav .menu .list__li:nth-child(3) {
+  left: 40px;
+}
+
+.footer .nav .menu .list__li:nth-child(4) {
+  left: 14px;
 }
 
 .footer .nav .menu .list__li a {
