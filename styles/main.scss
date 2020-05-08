@@ -330,7 +330,9 @@ section {
     top: 190px;
     text-align: center;
     overflow: hidden;
-    &__nav{
+    transition: 1s;
+
+    &__nav {
         padding-top: 88px !important;
     }
 
@@ -418,6 +420,7 @@ section {
     height: 2038px;
     padding-top: 93px;
     position: relative;
+    transition: 1s;
 }
 
 .row {
@@ -610,6 +613,7 @@ section {
     min-height: 534px;
     margin-top: 151px;
     padding-top: 93px;
+    transition: 1s;
 }
 
 .describe {
@@ -1118,16 +1122,18 @@ section {
 
 @media only screen and (max-width : 1200px) {
     .road {
-        display: none;
+        transition: 1s;
+        opacity: 0;
     }
 
     .services {
+        transition: 1s;
         width: calc(100% - 50px) !important;
     }
 
     .row {
         .phone {
-            transition: 2update s linear;
+            transition: 2s linear;
             opacity: .5;
         }
     }
@@ -1275,6 +1281,7 @@ section {
             position: relative;
             margin-top: 400px;
             left: 0;
+            transition: 1s;
             width: calc(100% - 50px);
 
             .google-map {
