@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 @font-face {
   font-family: Gilroy;
-  src: url(../../fonts/Gilroy-ExtraBold.otf);
+  src: url(../../src/styles/fonts/Gilroy-ExtraBold.otf);
 }
 
 @font-face {
   font-family: 'Gilroy-Light';
-  src: url(../../fonts/Gilroy-Light.otf);
+  src: url(../../src/styles/fonts/Gilroy-Light.otf);
 }
 
 html,
@@ -185,9 +185,10 @@ section {
 .header {
   position: relative;
   height: 1062px;
-  background-image: url(../../img/header/Bitmap.png);
+  background-image: url(../../src/assets/header/Bitmap.png);
   background-size: cover;
   background-position: center;
+  height: 100vh;
 }
 
 .header::after {
@@ -198,7 +199,7 @@ section {
   top: 0;
   left: 0;
   z-index: 1;
-  background-image: url(../../img/header/mask.png);
+  background-image: url(../../src/assets/header/mask.png);
 }
 
 .nav {
@@ -289,7 +290,7 @@ section {
   flex-direction: column;
   align-items: center;
   position: relative;
-  top: 358px;
+  top: 357px;
 }
 
 .slider .slider__title {
@@ -328,7 +329,7 @@ section {
 .slider-radio {
   position: relative;
   z-index: 2;
-  top: 390px;
+  top: 305px;
   left: 4px;
 }
 
@@ -428,7 +429,7 @@ section {
   height: 344px;
   background: #222222;
   position: relative;
-  top: 190px;
+  top: 305px;
   text-align: center;
   overflow: hidden;
   transition: 1s;
@@ -516,6 +517,7 @@ section {
   padding-top: 93px;
   position: relative;
   transition: 1s;
+  top: 113px;
 }
 
 .row {
@@ -701,6 +703,8 @@ section {
   margin-top: 151px;
   padding-top: 93px;
   transition: 1s;
+  top: 113px;
+  position: relative;
 }
 
 .describe__team {
@@ -918,7 +922,7 @@ section {
   z-index: 2;
   opacity: 0.4;
   filter: blur(6px);
-  background-image: url(../../img/team/this_user.png);
+  background-image: url(../../src/assets/team/this_user.png);
 }
 
 .photos .photo-blur-2 {
@@ -935,6 +939,7 @@ section {
   padding-top: 93px;
   display: flex;
   position: relative;
+  top: 113px;
 }
 
 .map .map-describe {

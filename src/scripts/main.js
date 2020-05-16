@@ -34,11 +34,11 @@ function fixedNav() {
     const navbar = document.querySelector('.nav');
     const container = document.querySelectorAll('.container');
     const list = document.querySelector('.list');
-    if (scroll > 60) {
+    if (scroll > 0) {
         navbar.classList.add('nav-fixed');
         list.setAttribute('style', 'align-items: center;')
         for (let i = 0; i < container.length; i++) {
-            console.log(container[i]);
+            // console.log(container[i]);
             if (i !== 0) container[i].setAttribute('style', 'padding-top: 93px;')
             
         }
@@ -47,7 +47,7 @@ function fixedNav() {
         navbar.classList.remove('nav-fixed');
         list.setAttribute('style', 'top: -9px;')
         for (let i = 0; i < container.length; i++) {
-            console.log(container[i]);
+            // console.log(container[i]);
             if (i !== 0) container[i].setAttribute('style', 'padding-top: 0;')
 
         }
@@ -331,12 +331,5 @@ function initMap(state = 2) {
         position: mapCoordinates[state],
         map: map,
         icon: image
-    });
-
-    var markers = locations.map(function (location, i) {
-        return new google.maps.Marker({
-            position: location,
-            label: labels[i % labels.length]
-        });
     });
 }

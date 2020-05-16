@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travler</title>
-    <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="./../dist/css/main.css">
 </head>
 
 <body>
@@ -13,23 +13,23 @@
         <nav class="nav">
             <div class="container navbar">
                 <div class="logo">
-                    <a href="#home" class="">
-                        <img src="img/header/Logo.svg" alt="logo">
+                    <a href="#home" class="" onclick="navbar(0)">
+                        <img src="./assets/header/Logo.svg" alt="logo">
                     </a>
                 </div>
                 <div class="menu">
                     <ul class="list">
-                        <li class="list__li list__li_active navbar_li" onclick="navbar(0)">
-                            <a href="#home">Home</a>
+                        <li class="list__li list__li_active navbar_li">
+                            <a href="#home" onclick="navbar(0)">Home</a>
                         </li>
-                        <li class="list__li navbar_li" onclick="navbar(1)">
-                            <a href="#services">Services</a>
+                        <li class="list__li navbar_li">
+                            <a href="#services" onclick="navbar(1)">Services</a>
                         </li>
-                        <li class="list__li navbar_li" onclick="navbar(2)">
-                            <a href="#team">Team</a>
+                        <li class="list__li navbar_li">
+                            <a href="#team" onclick="navbar(2)">Team</a>
                         </li>
-                        <li class="list__li navbar_li" onclick="navbar(3)">
-                            <a href="#contact">Contact Us</a>
+                        <li class="list__li navbar_li">
+                            <a href="#contact" onclick="navbar(3)">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -73,8 +73,8 @@
     <section class="services container" id="services">
         <div class="row">
             <div class="phone">
-                <img src="img/services/bg_for_phone.png" alt="circle">
-                <img src="img/services/phone.png" alt="phone">
+                <img src="./assets/services/bg_for_phone.png" alt="circle">
+                <img src="./assets/services/phone.png" alt="phone">
             </div>
             <div class="describe">
                 <span class="describe__title">Track every trip you make</span>
@@ -82,13 +82,13 @@
                     forgotten.</span>
                 <ul class="done-list">
                     <li class="done-list__li">
-                        <img src="img/services/done.png" class="done-list__ico" alt="done">
+                        <img src="./assets/services/done.png" class="done-list__ico" alt="done">
                         <span class="done-list__text">
                             No signal dropout
                         </span>
                     </li>
                     <li class="done-list__li">
-                        <img src="img/services/done.png" class="done-list__ico" alt="done">
+                        <img src="./assets/services/done.png" class="done-list__ico" alt="done">
                         <span class="done-list__text">
                             No missed trips
                         </span>
@@ -114,8 +114,8 @@
         </div>
         <div class="row services__row_2">
             <div class="phone">
-                <img src="img/services/bg_for_phone.png" alt="circle">
-                <img src="img/services/phone.png" alt="phone">
+                <img src="./assets/services/bg_for_phone.png" alt="circle">
+                <img src="./assets/services/phone.png" alt="phone">
             </div>
             <div class="describe">
                 <span class="describe__title">Classify with a single swipe</span>
@@ -123,13 +123,13 @@
                     that.</span>
                 <ul class="done-list">
                     <li class="done-list__li">
-                        <img src="img/services/done.png" class="done-list__ico" alt="done">
+                        <img src="./assets/services/done.png" class="done-list__ico" alt="done">
                         <span class="done-list__text">
                             Review trips on the go
                         </span>
                     </li>
                     <li class="done-list__li">
-                        <img src="img/services/done.png" class="done-list__ico" alt="done">
+                        <img src="./assets/services/done.png" class="done-list__ico" alt="done">
                         <span class="done-list__text">
                             Classify journeys in seconds
                         </span>
@@ -155,8 +155,8 @@
         </div>
         <div class="row services__row_3">
             <div class="phone">
-                <img src="img/services/bg_for_phone.png" alt="circle">
-                <img src="img/services/phone.png" alt="phone">
+                <img src="./assets/services/bg_for_phone.png" alt="circle">
+                <img src="./assets/services/phone.png" alt="phone">
             </div>
             <div class="describe">
                 <span class="describe__title">Claim your money back with ease</span>
@@ -165,13 +165,13 @@
                 </span>
                 <ul class="done-list">
                     <li class="done-list__li">
-                        <img src="img/services/done.png" class="done-list__ico" alt="done">
+                        <img src="./assets/services/done.png" class="done-list__ico" alt="done">
                         <span class="done-list__text">
                             100% HMRC compliance
                         </span>
                     </li>
                     <li class="done-list__li">
-                        <img src="img/services/done.png" class="done-list__ico" alt="done">
+                        <img src="./assets/services/done.png" class="done-list__ico" alt="done">
                         <span class="done-list__text">
                             All logs in one place
                         </span>
@@ -228,7 +228,7 @@
             <div class="slider-user">
                 <div class="slider-user__next">
                     <div class="user">
-                        <img src="img/team/foto_next.png" alt="user" class="user__img">
+                        <img src="./assets/team/foto_next.png" alt="user" class="user__img">
                     </div>
                     <div class="slider-user__info">
                         <button class="user-btn">
@@ -260,7 +260,7 @@
         </div>
         <div class="photos">
             <div class="photo">
-                <img src="img/team/this_user.png" alt="select_user">
+                <img src="./assets/team/this_user.png" alt="select_user">
             </div>
             <div class="photo-blur-1"></div>
             <div class="photo-blur-2"></div>
@@ -364,7 +364,7 @@
                 <ul class="map-schedules">
                     <li class="map-schedule">
                         <div class="schedule">
-                            <img src="img/map/clock.png" alt="clock" class="schedule__img">
+                            <img src="./assets/map/clock.png" alt="clock" class="schedule__img">
                             <span class="schedule__title">Work Schedule</span>
                         </div>
                         <div class="schedule__subtitle">
@@ -376,7 +376,7 @@
                     </li>
                     <li class="map-schedule">
                         <div class="schedule">
-                            <img src="img/map/phone_number.png" alt="phone_number" class="schedule__img">
+                            <img src="./assets/map/phone_number.png" alt="phone_number" class="schedule__img">
                             <span class="schedule__title">Head Office</span>
                         </div>
                         <div class="schedule__subtitle">
@@ -386,7 +386,7 @@
                     </li>
                     <li class="map-schedule">
                         <div class="schedule">
-                            <img src="img/map/email.png" alt="email" class="schedule__img">
+                            <img src="./assets/map/email.png" alt="email" class="schedule__img">
                             <span class="schedule__title">Head Office</span>
                         </div>
                         <div class="schedule__subtitle">
@@ -402,22 +402,22 @@
         <nav class="nav footer__nav container">
             <div class="logo">
                 <a href="#home" class="">
-                    <img src="img/footer/Logo.svg" alt="logo">
+                    <img src="./assets/footer/Logo.svg" alt="logo">
                 </a>
             </div>
             <div class="menu">
                 <ul class="list">
-                    <li class="list__li" onclick="navbar(0)">
-                        <a href="#home">Home</a>
+                    <li class="list__li">
+                        <a href="#home" onclick="navbar(0)">Home</a>
                     </li>
-                    <li class="list__li" onclick="navbar(1)">
-                        <a href="#services">Services</a>
+                    <li class="list__li">
+                        <a href="#services" onclick="navbar(1)">Services</a>
                     </li>
-                    <li class="list__li" onclick="navbar(2)">
-                        <a href="#team">Team</a>
+                    <li class="list__li">
+                        <a href="#team" onclick="navbar(2)">Team</a>
                     </li>
-                    <li class="list__li" onclick="navbar(3)">
-                        <a href="#contact">Contact Us</a>
+                    <li class="list__li">
+                        <a href="#contact" onclick="navbar(3)">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -431,7 +431,7 @@
             </div>
         </nav>
     </footer>
-    <script src="script.js"></script>
+    <script src="scripts/main.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjS0-kWgQC7m3Lv_8yeLpo1E9Pr2Wc0PI&callback=initMap"
         type="text/javascript"></script>
