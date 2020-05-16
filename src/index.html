@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travler</title>
     <link rel="stylesheet" href="./../dist/css/main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -71,7 +72,7 @@
         </div>
     </header>
     <section class="services container" id="services">
-        <div class="row">
+        <div class="row" data-aos="zoom-out-down">
             <div class="phone">
                 <img src="./assets/services/bg_for_phone.png" alt="circle">
                 <img src="./assets/services/phone.png" alt="phone">
@@ -112,7 +113,7 @@
                 </button>
             </div>
         </div>
-        <div class="row services__row_2">
+        <div class="row services__row_2" data-aos="zoom-out-down">
             <div class="phone">
                 <img src="./assets/services/bg_for_phone.png" alt="circle">
                 <img src="./assets/services/phone.png" alt="phone">
@@ -153,7 +154,7 @@
                 </button>
             </div>
         </div>
-        <div class="row services__row_3">
+        <div class="row services__row_3" data-aos="zoom-out-down">
             <div class="phone">
                 <img src="./assets/services/bg_for_phone.png" alt="circle">
                 <img src="./assets/services/phone.png" alt="phone">
@@ -206,7 +207,7 @@
 
     </section>
     <section class="team container" id="team">
-        <div class="describe describe__team">
+        <div class="describe describe__team" data-aos="zoom-in-right">
             <span class="describe__title describe__title_team">Julia Harrington</span>
             <span class="describe__subtitle describe__subtitle_author">Art Director</span>
             <span class="describe__subtitle describe__subtitle_team">
@@ -258,7 +259,7 @@
                 </div>
             </div>
         </div>
-        <div class="photos">
+        <div class="photos" data-aos="zoom-in-left">
             <div class="photo">
                 <img src="./assets/team/this_user.png" alt="select_user">
             </div>
@@ -280,7 +281,7 @@
                 Venaville, New York 10010
             </span>
             <ul class="map__locations">
-                <li class="map__location map__location_active" onclick="getMapData(0)">
+                <li class="map__location map__location_active" onclick="getMapData(0)" data-aos="zoom-in-right">
                     <div class="location__icon map-icon">
                         <svg class="location__icon_svg" width="24" height="25" viewBox="0 0 24 25" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -298,7 +299,7 @@
                         </span>
                     </div>
                 </li>
-                <li class="map__location" onclick="getMapData(1)">
+                <li class="map__location" onclick="getMapData(1)" data-aos="zoom-in-right">
                     <div class="location__icon map-icon">
                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -315,7 +316,7 @@
                         </span>
                     </div>
                 </li>
-                <li class="map__location " onclick="getMapData(2)">
+                <li class="map__location " onclick="getMapData(2)" data-aos="zoom-in-right">
                     <div class="location__icon location__icon_2 map-icon">
                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -332,7 +333,7 @@
                         </span>
                     </div>
                 </li>
-                <li class="map__location" onclick="getMapData(3)">
+                <li class="map__location" onclick="getMapData(3)" data-aos="zoom-in-right">
                     <div class="location__icon map-icon">
                         <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -354,7 +355,7 @@
         <div class="map-card">
             <div class="google-map" id="map">
             </div>
-            <div class="map-details">
+            <div class="map-details" data-aos="zoom-in-left">
                 <span class="map-details__title">
                     Los Angeles, USA
                 </span>
@@ -431,6 +432,7 @@
             </div>
         </nav>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts/main.js"></script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjS0-kWgQC7m3Lv_8yeLpo1E9Pr2Wc0PI&callback=initMap"

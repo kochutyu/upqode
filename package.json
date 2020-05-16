@@ -25,6 +25,7 @@
     "gulp-jsmin": "^0.1.5"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "gulp-concat": "^2.6.1",
     "gulp-sourcemaps": "^2.6.5"
   }
