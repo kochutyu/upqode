@@ -21,7 +21,6 @@
 //? ------------------------------------------------------------------------------------------------------------------------------
 //?                                         Large screens min-width : 1824px
 //? ------------------------------------------------------------------------------------------------------------------------------
-
 html {
     scroll-behavior: smooth;
 }
@@ -30,13 +29,13 @@ section {
     overflow: hidden;
 }
 
-
 .container {
     width: $container;
     margin: 0 auto;
     overflow: hidden;
     height: 100%;
 }
+
 
 .btn {
     background: #00A031;
@@ -67,11 +66,11 @@ section {
 .header {
     position: relative;
     height: 1062px;
-    background-image: url(../../src/assets/header/Bitmap.png);
+    background-image: url(../assets/header/Bitmap.png);
     background-size: cover;
     background-position: center;
-    // background-color: red;
     height: 100vh;
+
 
     &::after {
         content: '';
@@ -83,6 +82,7 @@ section {
         z-index: 1;
         background-image: url(../../src/assets/header/mask.png);
     }
+
 
 }
 
@@ -871,6 +871,7 @@ section {
     display: flex;
     position: relative;
     top: 113px;
+    overflow: visible;
 
     .map-describe {
         display: flex;
