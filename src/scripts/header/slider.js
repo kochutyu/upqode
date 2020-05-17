@@ -8,6 +8,7 @@ function getRadioIndex(section = 'slider', nextSlide = true) {
 
         for (const radio of sliderRadio) {
             const prevousRadio = radio.children[0].checked;
+            
             i++;
             if (prevousRadio) {
                 break;
@@ -28,14 +29,14 @@ function getRadioIndex(section = 'slider', nextSlide = true) {
             }
             sliderRadio[i].children[0].checked = true;
         }
-
+        console.log(i);
+        
         return i
     }
 }
 
 
-function workWithHeader(section, nextSlide) {
-    const radioIndex = getRadioIndex(section, nextSlide);
+function workWithHeader(section, nextSlide = false, radioIndex = getRadioIndex(section, nextSlide)) {
     const title = document.querySelector('.slider__title');
     const subTitle = document.querySelector('.slider__subtitle');
 
