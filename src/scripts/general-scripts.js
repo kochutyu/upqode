@@ -12,7 +12,6 @@ window.addEventListener('scroll', () => {
 })
 
 
-
 class Animation {
     menu() {
         const list = document.querySelector('.list').children;

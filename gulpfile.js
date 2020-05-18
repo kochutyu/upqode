@@ -31,9 +31,7 @@ gulp.task('js', done => {
         .pipe(plumber())
         .pipe(babel({
             presets: [
-                ['@babel/env', {
-                    modules: false
-                }],
+                ['@babel/env'],
             ]
         }))
         .pipe(concat('main.js'))

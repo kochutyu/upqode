@@ -60,6 +60,8 @@ var Animation = /*#__PURE__*/function () {
 
   return Animation;
 }();
+"use strict";
+
 var mapCoordinates = [{
   lat: 34.052235,
   lng: -118.243683
@@ -247,6 +249,8 @@ function initMap() {
     icon: image
   });
 }
+"use strict";
+
 function fixedNav() {
   var scroll = window.pageYOffset;
   var navbar = document.querySelector('.nav');
@@ -283,6 +287,8 @@ function navbar() {
     }
   }
 }
+"use strict";
+
 function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -367,4 +373,179 @@ function workWithHeader(section) {
       break;
   }
 }
+"use strict";
+
+window.addEventListener('scroll', function () {// SCROLL
+  // CALL FUNCTION
+});
+window.addEventListener('load', function () {
+  // LOAD
+  console.log(service_point_oval_1); // GET SOME INFO
+  // CALL FUNCTION
+}); //! ----------------------------------------------------------------------
+//! CODE
+//! ----------------------------------------------------------------------
+
+gsap.to("#service_point_oval_1", {
+  duration: 1,
+  repeatDelay: 0.001,
+  repeat: -1,
+  opacity: 0,
+  fill: '#00A031'
+}); //percents
+
+gsap.to("#service_point_oval_2", {
+  duration: 1,
+  repeatDelay: 0.004,
+  repeat: -1,
+  opacity: 0,
+  fill: '#00A031'
+}); //percents
+
+gsap.to("#service_point_oval_3", {
+  duration: 1,
+  repeatDelay: 0.007,
+  repeat: -1,
+  opacity: 0
+}); //percents
+
+gsap.to("#service_point_oval_4", {
+  duration: 1,
+  repeatDelay: 0.010,
+  repeat: -1,
+  opacity: 0
+}); //percents
+
+gsap.to("#service_point_oval_5", {
+  duration: 1,
+  repeatDelay: 0.013,
+  repeat: -1,
+  opacity: 0
+}); //percents
+
+gsap.to("#service_point_oval_6", {
+  duration: 1,
+  repeatDelay: 0.017,
+  repeat: -1,
+  opacity: 0
+}); //percents
+
+gsap.to("#service_point_oval_7", {
+  duration: 1,
+  repeatDelay: 0.02,
+  repeat: -1,
+  opacity: 0
+}); //percents
+
+gsap.to("#service_point_oval_8", {
+  duration: 1,
+  repeatDelay: 0.023,
+  repeat: -1,
+  opacity: 0
+}); //percents
+
+gsap.to("#service_point_oval_9", {
+  duration: 1,
+  repeatDelay: 0.027,
+  repeat: -1,
+  opacity: 0
+}); //percents
+
+gsap.to("#service_point_oval_10", {
+  duration: 1,
+  repeatDelay: 0.030,
+  repeat: -1,
+  opacity: 0
+}); //percents
+
+gsap.to("#service_point_oval_11", {
+  duration: 1,
+  repeatDelay: 0.033,
+  repeat: -1,
+  opacity: 0
+}); //percents
+
+gsap.to("#service_point_oval_12", {
+  duration: 1,
+  repeatDelay: 0.037,
+  repeat: -1,
+  opacity: 0
+}); //percents
+"use strict";
+
+window.addEventListener('scroll', function () {
+  // SCROLL
+  // CALL FUNCTION
+  animateRoad();
+  getStartPosotionOfPoint();
+});
+window.addEventListener('load', function () {
+  // LOAD
+  // GET SOME INFO
+  previousScroll = window.pageYOffset; // CALL FUNCTION
+
+  getStartPosotionOfPoint();
+}); //! ----------------------------------------------------------------------
+//! CODE
+//! ----------------------------------------------------------------------
+
+var sizeRoadInPX = 1216;
+var road = document.getElementById('service_road');
+var point = document.getElementById('service_point');
+var previousScroll = window.pageYOffset;
+var durationForAnimateOfPoint = 3;
+gsap.registerPlugin(MotionPathPlugin);
+var tween = gsap.to("#service_point", {
+  // TWEEN SETTINGS
+  duration: durationForAnimateOfPoint,
+  repeat: 0,
+  repeatDelay: 10,
+  yoyo: true,
+  ease: "power1.inOut",
+  motionPath: {
+    path: "#service_road",
+    align: "#service_road",
+    autoRotate: true,
+    alignOrigin: [0.5, 0.5]
+  }
+});
+
+var animateRoad = function animateRoad() {
+  var newScrollTop = window.pageYOffset;
+  var positionRoadBottom = road.getBoundingClientRect().bottom;
+  var positionRoadTop = road.getBoundingClientRect().top;
+
+  if (positionRoadBottom > 0 && positionRoadTop < 800) {
+    // GET POSITION FOR START AND FINISH ROAD SVG 
+    if (previousScroll < newScrollTop) {
+      // SCROLLED DOWN
+      tween.play();
+      setTimeout(function () {
+        tween.pause();
+      }, 350);
+    } else {
+      // SCROLLED UP
+      tween.reverse();
+      setTimeout(function () {
+        tween.pause();
+      }, 500);
+    }
+  }
+
+  previousScroll = newScrollTop;
+};
+
+var getStartPosotionOfPoint = function getStartPosotionOfPoint() {
+  var positionRoadBottom = road.getBoundingClientRect().bottom;
+  var positionRoadTop = road.getBoundingClientRect().top;
+
+  if (positionRoadBottom > 0 && positionRoadBottom < sizeRoadInPX / 2) {
+    // GET 1/2 (POSITION POINT FOR FINISH ROAD)
+    console.log('botton');
+    durationForAnimateOfPoint = 0;
+    tween.play();
+  }
+
+  durationForAnimateOfPoint = 3;
+};
 //# sourceMappingURL=main.js.map
