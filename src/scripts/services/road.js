@@ -1,3 +1,8 @@
+
+//! ----------------------------------------------------------------------
+//! WINDOW EVENT
+//! ----------------------------------------------------------------------
+
 window.addEventListener('scroll', () => { // SCROLL
 
     // CALL FUNCTION
@@ -82,10 +87,9 @@ const animateRoad = () => {
 
 const getStartPosotionOfPoint = () => {
     const positionRoadBottom = road.getBoundingClientRect().bottom;
-    const positionRoadTop = road.getBoundingClientRect().top;
 
     if (positionRoadBottom > 0 && positionRoadBottom < sizeRoadInPX / 2) { // GET 1/2 (POSITION POINT FOR FINISH ROAD)
-        console.log('botton');
+        
         durationForAnimateOfPoint = 0;
         tween.play();
     }

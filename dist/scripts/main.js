@@ -12,14 +12,26 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-AOS.init();
+//? --------------
+//? INIT LIBS
+//? --------------
+AOS.init(); //! ----------------------------------------------------------------------
+//! WINDOW EVENT
+//! ----------------------------------------------------------------------
+
+window.addEventListener('scroll', function () {
+  // SCROLL
+  // CALL FUNCTION
+  fixedNav();
+});
 window.addEventListener('load', function () {
+  // LOAD
+  // CALL FUNCTION
   fixedNav();
   navbar();
-});
-window.addEventListener('scroll', function () {
-  fixedNav();
-});
+}); //! ----------------------------------------------------------------------
+//! CODE
+//! ----------------------------------------------------------------------
 
 var Animation = /*#__PURE__*/function () {
   function Animation() {
@@ -76,7 +88,7 @@ var mapCoordinates = [{
   lng: -83.045753
 }];
 
-function getMapData() {
+var getMapData = function getMapData() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 2;
   var listMap = document.querySelector('.map__locations').children;
   var li = listMap[state];
@@ -104,9 +116,9 @@ function getMapData() {
   var titleInfo = document.querySelector('.map-details__title');
   titleInfo.textContent = titleOfActiveState.textContent;
   initMap(state);
-}
+};
 
-function initMap() {
+var initMap = function initMap() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 2;
   // The location of Uluru
   var uluru = {
@@ -248,24 +260,25 @@ function initMap() {
     map: map,
     icon: image
   });
-}
+};
 "use strict";
 
-function fixedNav() {
+var fixedNav = function fixedNav() {
   var scroll = window.pageYOffset;
   var navbar = document.querySelector('.nav');
   var container = document.querySelectorAll('.container');
   var list = document.querySelector('.list');
 
   if (scroll > 0) {
+    // SCROLLED DOWN
     navbar.classList.add('nav-fixed');
     list.setAttribute('style', 'align-items: center;');
 
     for (var i = 0; i < container.length; i++) {
-      // console.log(container[i]);
       if (i !== 0) container[i].setAttribute('style', 'padding-top: 93px;');
     }
   } else {
+    // SCROLLED UP
     navbar.classList.remove('nav-fixed');
     list.setAttribute('style', 'top: -9px;');
 
@@ -273,20 +286,16 @@ function fixedNav() {
       if (_i !== 0) container[_i].setAttribute('style', 'padding-top: 0;');
     }
   }
-}
+};
 
-function navbar() {
+var navbar = function navbar() {
   var item = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
   var li = document.querySelectorAll('.navbar_li');
 
   for (var i = 0; i < li.length; i++) {
-    if (item === i) {
-      li[i].classList.add('list__li_active');
-    } else {
-      li[i].classList.remove('list__li_active');
-    }
+    if (item === i) li[i].classList.add('list__li_active');else li[i].classList.remove('list__li_active');
   }
-}
+};
 "use strict";
 
 function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
@@ -345,7 +354,6 @@ function getRadioIndex() {
       sliderRadio[i].children[0].checked = true;
     }
 
-    console.log(i);
     return i;
   }
 }
@@ -375,17 +383,9 @@ function workWithHeader(section) {
 }
 "use strict";
 
-window.addEventListener('scroll', function () {// SCROLL
-  // CALL FUNCTION
-});
-window.addEventListener('load', function () {
-  // LOAD
-  console.log(service_point_oval_1); // GET SOME INFO
-  // CALL FUNCTION
-}); //! ----------------------------------------------------------------------
+//! ----------------------------------------------------------------------
 //! CODE
 //! ----------------------------------------------------------------------
-
 gsap.to("#service_point_oval_1", {
   duration: 1,
   repeatDelay: 0.001,
@@ -473,6 +473,9 @@ gsap.to("#service_point_oval_12", {
 }); //percents
 "use strict";
 
+//! ----------------------------------------------------------------------
+//! WINDOW EVENT
+//! ----------------------------------------------------------------------
 window.addEventListener('scroll', function () {
   // SCROLL
   // CALL FUNCTION
@@ -537,11 +540,9 @@ var animateRoad = function animateRoad() {
 
 var getStartPosotionOfPoint = function getStartPosotionOfPoint() {
   var positionRoadBottom = road.getBoundingClientRect().bottom;
-  var positionRoadTop = road.getBoundingClientRect().top;
 
   if (positionRoadBottom > 0 && positionRoadBottom < sizeRoadInPX / 2) {
     // GET 1/2 (POSITION POINT FOR FINISH ROAD)
-    console.log('botton');
     durationForAnimateOfPoint = 0;
     tween.play();
   }

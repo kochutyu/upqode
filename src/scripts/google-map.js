@@ -18,7 +18,7 @@ const mapCoordinates = [{
 
 
 
-function getMapData(state = 2) {
+const getMapData = (state = 2) => {
     const listMap = document.querySelector('.map__locations').children;
     const li = listMap[state];
     const titleOfActiveState = listMap[state].children[1].children[0];
@@ -55,17 +55,17 @@ function getMapData(state = 2) {
 
 
 
-function initMap(state = 2) {
+const initMap = (state = 2) => {
     // The location of Uluru
-    var uluru = {
+    const uluru = {
         lat: 49.84,
         lng: 24.031111
     };
 
-    var image = 'https://firebasestorage.googleapis.com/v0/b/la-piec-f604d.appspot.com/o/1.svg?alt=media&token=52105278-04c6-4f3e-a21e-922b6a615f8b';
+    const image = 'https://firebasestorage.googleapis.com/v0/b/la-piec-f604d.appspot.com/o/1.svg?alt=media&token=52105278-04c6-4f3e-a21e-922b6a615f8b';
 
     // The map, centered at Uluru
-    var map = new google.maps.Map(
+    const map = new google.maps.Map(
         document.getElementById('map'), {
             zoom: 18,
             scaleControl: false,
@@ -199,8 +199,9 @@ function initMap(state = 2) {
                 }
             ]
         });
+
     // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({
+    const marker = new google.maps.Marker({
         position: mapCoordinates[state],
         map: map,
         icon: image

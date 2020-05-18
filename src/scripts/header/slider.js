@@ -8,7 +8,7 @@ function getRadioIndex(section = 'slider', nextSlide = true) {
 
         for (const radio of sliderRadio) {
             const prevousRadio = radio.children[0].checked;
-            
+
             i++;
             if (prevousRadio) {
                 break;
@@ -29,8 +29,7 @@ function getRadioIndex(section = 'slider', nextSlide = true) {
             }
             sliderRadio[i].children[0].checked = true;
         }
-        console.log(i);
-        
+
         return i
     }
 }

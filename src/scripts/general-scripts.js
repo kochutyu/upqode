@@ -1,15 +1,28 @@
-"use strict"
-
+//? --------------
+//? INIT LIBS
+//? --------------
 AOS.init();
 
-window.addEventListener('load', () => {
+//! ----------------------------------------------------------------------
+//! WINDOW EVENT
+//! ----------------------------------------------------------------------
+
+window.addEventListener('scroll', () => { // SCROLL
+
+    // CALL FUNCTION
+    fixedNav()
+})
+
+window.addEventListener('load', () => { // LOAD
+
+    // CALL FUNCTION
     fixedNav()
     navbar();
 })
 
-window.addEventListener('scroll', () => {
-    fixedNav()
-})
+//! ----------------------------------------------------------------------
+//! CODE
+//! ----------------------------------------------------------------------
 
 class Animation {
     menu() {
@@ -25,5 +38,3 @@ class Animation {
         const arrowLeft = document.querySelector('.arrow-left img');
     }
 }
-
-
