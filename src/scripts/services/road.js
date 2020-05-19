@@ -1,4 +1,3 @@
-
 //! ----------------------------------------------------------------------
 //! WINDOW EVENT
 //! ----------------------------------------------------------------------
@@ -7,7 +6,6 @@ window.addEventListener('scroll', () => { // SCROLL
 
     // CALL FUNCTION
     animateRoad();
-    getStartPosotionOfPoint();
 })
 
 window.addEventListener('load', () => { // LOAD
@@ -16,7 +14,7 @@ window.addEventListener('load', () => { // LOAD
     previousScroll = window.pageYOffset;
 
     // CALL FUNCTION
-    getStartPosotionOfPoint();
+    animateRoad();
 })
 
 //! ----------------------------------------------------------------------
@@ -33,7 +31,7 @@ let durationForAnimateOfPoint = 3;
 gsap.registerPlugin(MotionPathPlugin);
 
 const tween = gsap.to("#service_point", { // TWEEN SETTINGS
-    duration: durationForAnimateOfPoint,
+    duration: 5,
     repeat: 0,
     repeatDelay: 10,
     yoyo: true,
@@ -64,7 +62,7 @@ const animateRoad = () => {
 
             setTimeout(function () {
                 tween.pause();
-            }, 350);
+            }, 50);
 
         } else { // SCROLLED UP
 
@@ -72,27 +70,11 @@ const animateRoad = () => {
 
             setTimeout(function () {
                 tween.pause();
-            }, 500);
+            }, 50);
 
         }
 
     }
 
     previousScroll = newScrollTop;
-}
-
-
-
-
-
-const getStartPosotionOfPoint = () => {
-    const positionRoadBottom = road.getBoundingClientRect().bottom;
-
-    if (positionRoadBottom > 0 && positionRoadBottom < sizeRoadInPX / 2) { // GET 1/2 (POSITION POINT FOR FINISH ROAD)
-        
-        durationForAnimateOfPoint = 0;
-        tween.play();
-    }
-
-    durationForAnimateOfPoint = 3;
 }
