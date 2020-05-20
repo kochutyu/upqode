@@ -19,16 +19,14 @@ AOS.init(); //! ----------------------------------------------------------------
 //! WINDOW EVENT
 //! ----------------------------------------------------------------------
 
-window.addEventListener('scroll', function () {
-  // SCROLL
+window.addEventListener('scroll', function () {// SCROLL
   // CALL FUNCTION
-  fixedNav();
+  // fixedNav()
 });
-window.addEventListener('load', function () {
-  // LOAD
+window.addEventListener('load', function () {// LOAD
   // CALL FUNCTION
-  fixedNav();
-  navbar();
+  // fixedNav()
+  // navbar();
 }); //! ----------------------------------------------------------------------
 //! CODE
 //! ----------------------------------------------------------------------
@@ -263,6 +261,305 @@ var initMap = function initMap() {
 };
 "use strict";
 
+var selectLi = undefined;
+var savedHash = undefined; //! ----------------------------------------------------------------------
+//! WINDOW EVENT
+//! ----------------------------------------------------------------------
+
+window.addEventListener('scroll', function () {
+  // SCROLL
+  // CALL FUNCTION
+  fixedNav();
+  closeMenu();
+  resizeDropDownMenu();
+  navigateURL();
+});
+window.addEventListener('load', function () {
+  // LOAD
+  // CALL FUNCTION
+  fixedNav();
+  resizeDropDownMenu();
+  window.scrollTo(0, 0);
+});
+window.addEventListener('resize', function () {
+  // CALL FUNCTION
+  resizeDropDownMenu();
+  closeMenu();
+}); //! ----------------------------------------------------------------------
+//! CODE
+//! ----------------------------------------------------------------------
+
+var fixedNav = function fixedNav() {
+  var scroll = window.pageYOffset;
+  var navbar = document.querySelector('.nav');
+  var container = document.querySelectorAll('.container');
+  var list = document.querySelector('.list');
+  var windowWidth = window.innerWidth;
+
+  if (windowWidth >= 1024) {}
+
+  if (scroll > 0) {
+    // SCROLLED DOWN
+    navbar.classList.add('nav-fixed');
+    list.setAttribute('style', 'align-items: center;');
+
+    for (var i = 0; i < container.length; i++) {
+      if (i !== 0) container[i].setAttribute('style', 'padding-top: 93px;');
+    }
+  } else {
+    // SCROLLED UP
+    navbar.classList.remove('nav-fixed');
+    list.setAttribute('style', 'top: -9px;');
+
+    for (var _i = 0; _i < container.length; _i++) {
+      if (_i !== 0) container[_i].setAttribute('style', 'padding-top: 0;');
+    }
+  }
+};
+
+var navbar = function navbar() {
+  var item = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+  navigateByURL = false;
+  var li = document.querySelectorAll('.navbar_li');
+
+  for (var i = 0; i < li.length; i++) {
+    if (item === i) {
+      li[i].classList.add('list__li_active');
+      selectLi = li[i];
+      savedHash = li[i].children[0].textContent.toLocaleLowerCase();
+      dropDownMenu();
+      setTimeout(function () {
+        navigateByURL = true;
+      }, 2000);
+    } else li[i].classList.remove('list__li_active'); // if (window.location.hash) {
+    // }
+
+  } // console.log(selectLi.getBoundingClientRect().top);
+  // console.log(window.location.hash);
+  // setTimeout(function () {
+  // }, 3000);
+
+};
+
+var closeDropDownMenu = true;
+
+var dropDownMenu = function dropDownMenu() {
+  // alert('click');
+  if (closeDropDownMenu) {
+    //OPEN DROP MENU
+    gsap.to('list', {
+      top: 0
+    });
+    document.getElementById('drop-menu').classList.remove('list__drop-down-menu_hiden');
+    animateNavBtn().setStyle();
+    closeDropDownMenu = false;
+  } else {
+    // CLOSE DROP MENU
+    gsap.to('list', {
+      top: 0
+    });
+    document.getElementById('drop-menu').classList.add('list__drop-down-menu_hiden');
+    animateNavBtn().resetStyle();
+    closeDropDownMenu = true;
+  }
+};
+
+var animateNavBtn = function animateNavBtn() {
+  var setStyle = function setStyle() {
+    var duration = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+    gsap.to(".list__li-drop-down_row-2", {
+      duration: duration,
+      opacity: 0
+    });
+    gsap.to(".list__li-drop-down_row-1, .list__li-drop-down_row-3", {
+      duration: duration,
+      backgroundColor: '#d35c5c'
+    });
+    gsap.to(".list__li-drop-down_row-1", {
+      duration: duration,
+      rotate: '45deg',
+      x: 0,
+      y: 10
+    });
+    gsap.to(".list__li-drop-down_row-3", {
+      duration: duration,
+      rotate: '-45deg',
+      x: 0,
+      y: -10
+    });
+  };
+
+  var resetStyle = function resetStyle() {
+    var duration = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+    closeDropDownMenu = false;
+    gsap.to(".list__li-drop-down_row-1, .list__li-drop-down_row-3", {
+      duration: duration,
+      backgroundColor: '#fff',
+      rotate: '0',
+      x: 0,
+      y: 0
+    });
+    gsap.to(".list__li-drop-down_row-2", {
+      duration: duration,
+      opacity: 1
+    });
+  };
+
+  return {
+    resetStyle: resetStyle,
+    setStyle: setStyle
+  };
+};
+
+var resizeDropDownMenu = function resizeDropDownMenu() {
+  var windowWidth = window.innerWidth;
+
+  if (windowWidth < 1024) {
+    document.getElementById('drop-menu').classList.add('list__drop-down-menu_hiden', 'list__drop-down-menu_open');
+  } else if (windowWidth >= 1024) {
+    document.getElementById('drop-menu').classList.remove('list__drop-down-menu_hiden', 'list__drop-down-menu_open');
+  }
+};
+
+var closeMenu = function closeMenu() {
+  var windowWidth = window.innerWidth;
+
+  if (windowWidth < 1024) {
+    animateNavBtn().resetStyle();
+    dropDownMenu();
+  }
+};
+
+var navigateByURL = true;
+
+var navigateURL = function navigateURL() {
+  if (navigateByURL) {
+    var windowHeight = window.innerHeight;
+    var nav = document.querySelector('.list').children;
+    var headerTop = document.querySelector('.header').getBoundingClientRect().top;
+    var servicesTop = document.querySelector('.services').getBoundingClientRect().top;
+    var teamTop = document.querySelector('.team').getBoundingClientRect().top;
+    var mapTop = document.querySelector('.map').getBoundingClientRect().top;
+    var headerBotom = document.querySelector('.header').getBoundingClientRect().bottom;
+    var servicesBotom = document.querySelector('.services').getBoundingClientRect().bottom;
+    var teamBotom = document.querySelector('.team').getBoundingClientRect().bottom;
+    var mapBotom = document.querySelector('.map').getBoundingClientRect().bottom;
+    console.log("\n        headerTop: ".concat(headerTop, ",\n        headerBottom: ").concat(headerBotom, "\n\n        servicesTop: ").concat(servicesTop, ",\n        servicesBotom: ").concat(servicesBotom, "\n\n        teamTop: ").concat(teamTop, ",\n        teamBotom ").concat(mapBotom, "\n\n        mapTop: ").concat(mapTop, ",\n        mapBotom ").concat(mapBotom, "\n        "));
+
+    if (headerTop < windowHeight && headerBotom > 0) {
+      window.location.hash = '#home';
+    } else if (servicesTop < windowHeight && servicesBotom > 0) {
+      window.location.hash = '#services';
+    } else if (teamTop < windowHeight && teamBotom > 0) {
+      window.location.hash = '#team';
+    } else if (mapTop < windowHeight && mapBotom > 0) {
+      window.location.hash = '#contact';
+    }
+
+    var locationHash = window.location.hash.slice(1);
+
+    for (var i = 0; i < nav.length; i++) {
+      var li = nav[i];
+      var a = nav[i].children[0].textContent.toLocaleLowerCase();
+
+      if (a.includes(locationHash)) {
+        // console.log(a);
+        navigateByURL = false;
+        nav[i].classList.add('list__li_active');
+        navigateByURL = true;
+      } else {
+        nav[i].classList.remove('list__li_active');
+      }
+    }
+  }
+};
+"use strict";
+
+function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function getRadioIndex() {
+  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'slider';
+  var nextSlide = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+  var getClassName = event.path[2].className; // if click on errows
+
+  if (getClassName === section) {
+    var i = 0;
+    var sliderRadio = event.path[2].children[4].children;
+
+    var _iterator = _createForOfIteratorHelper(sliderRadio),
+        _step;
+
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var radio = _step.value;
+        var prevousRadio = radio.children[0].checked;
+        i++;
+
+        if (prevousRadio) {
+          break;
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+
+    if (nextSlide) {
+      // next slide
+      if (sliderRadio.length > i) {
+        // check nextSlide
+        sliderRadio[i].children[0].checked = true;
+      } else {
+        // return to start of slider
+        i = 0;
+        sliderRadio[i].children[0].checked = true;
+      }
+    } else {
+      // back
+      i -= 2; // get previous radio
+
+      if (i < 0) {
+        // get last radio
+        i = sliderRadio.length - 1;
+      }
+
+      sliderRadio[i].children[0].checked = true;
+    }
+
+    return i;
+  }
+}
+
+function workWithHeader(section) {
+  var nextSlide = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  var radioIndex = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : getRadioIndex(section, nextSlide);
+  var title = document.querySelector('.slider__title');
+  var subTitle = document.querySelector('.slider__subtitle');
+
+  switch (radioIndex) {
+    case 0:
+      title.textContent = 'Slide 1';
+      subTitle.textContent = 'Subtitle of Slider 1';
+      break;
+
+    case 1:
+      title.textContent = 'Mileage Made Simple';
+      subTitle.textContent = 'otivation And Your Personal Vision An Unbeatable Force';
+      break;
+
+    case 2:
+      title.textContent = 'Slide 3';
+      subTitle.textContent = 'Subtitle of Slider 3';
+      break;
+  }
+}
+"use strict";
+
 //! ----------------------------------------------------------------------
 //! CODE
 //! ----------------------------------------------------------------------
@@ -416,124 +713,4 @@ var animateRoad = function animateRoad() {
 
   previousScroll = newScrollTop;
 };
-"use strict";
-
-var fixedNav = function fixedNav() {
-  var scroll = window.pageYOffset;
-  var navbar = document.querySelector('.nav');
-  var container = document.querySelectorAll('.container');
-  var list = document.querySelector('.list');
-
-  if (scroll > 0) {
-    // SCROLLED DOWN
-    navbar.classList.add('nav-fixed');
-    list.setAttribute('style', 'align-items: center;');
-
-    for (var i = 0; i < container.length; i++) {
-      if (i !== 0) container[i].setAttribute('style', 'padding-top: 93px;');
-    }
-  } else {
-    // SCROLLED UP
-    navbar.classList.remove('nav-fixed');
-    list.setAttribute('style', 'top: -9px;');
-
-    for (var _i = 0; _i < container.length; _i++) {
-      if (_i !== 0) container[_i].setAttribute('style', 'padding-top: 0;');
-    }
-  }
-};
-
-var navbar = function navbar() {
-  var item = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-  var li = document.querySelectorAll('.navbar_li');
-
-  for (var i = 0; i < li.length; i++) {
-    if (item === i) li[i].classList.add('list__li_active');else li[i].classList.remove('list__li_active');
-  }
-};
-"use strict";
-
-function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function getRadioIndex() {
-  var section = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'slider';
-  var nextSlide = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
-  var getClassName = event.path[2].className; // if click on errows
-
-  if (getClassName === section) {
-    var i = 0;
-    var sliderRadio = event.path[2].children[4].children;
-
-    var _iterator = _createForOfIteratorHelper(sliderRadio),
-        _step;
-
-    try {
-      for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var radio = _step.value;
-        var prevousRadio = radio.children[0].checked;
-        i++;
-
-        if (prevousRadio) {
-          break;
-        }
-      }
-    } catch (err) {
-      _iterator.e(err);
-    } finally {
-      _iterator.f();
-    }
-
-    if (nextSlide) {
-      // next slide
-      if (sliderRadio.length > i) {
-        // check nextSlide
-        sliderRadio[i].children[0].checked = true;
-      } else {
-        // return to start of slider
-        i = 0;
-        sliderRadio[i].children[0].checked = true;
-      }
-    } else {
-      // back
-      i -= 2; // get previous radio
-
-      if (i < 0) {
-        // get last radio
-        i = sliderRadio.length - 1;
-      }
-
-      sliderRadio[i].children[0].checked = true;
-    }
-
-    return i;
-  }
-}
-
-function workWithHeader(section) {
-  var nextSlide = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-  var radioIndex = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : getRadioIndex(section, nextSlide);
-  var title = document.querySelector('.slider__title');
-  var subTitle = document.querySelector('.slider__subtitle');
-
-  switch (radioIndex) {
-    case 0:
-      title.textContent = 'Slide 1';
-      subTitle.textContent = 'Subtitle of Slider 1';
-      break;
-
-    case 1:
-      title.textContent = 'Mileage Made Simple';
-      subTitle.textContent = 'otivation And Your Personal Vision An Unbeatable Force';
-      break;
-
-    case 2:
-      title.textContent = 'Slide 3';
-      subTitle.textContent = 'Subtitle of Slider 3';
-      break;
-  }
-}
 //# sourceMappingURL=main.js.map

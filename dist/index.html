@@ -19,8 +19,13 @@
                     </a>
                 </div>
                 <div class="menu">
-                    <ul class="list">
-                        <li class="list__li list__li_active navbar_li">
+                    <span class="list__li-drop-down" id="drop-btn" onclick="dropDownMenu()">
+                        <span class="list__li-drop-down_row-1 list__li-drop-down_rows"></span>
+                        <span class="list__li-drop-down_row-2 list__li-drop-down_rows"></span>
+                        <span class="list__li-drop-down_row-3 list__li-drop-down_rows"></span>
+                    </span>
+                    <ul class="list" id="drop-menu">
+                        <li class="list__li navbar_li list__li_active">
                             <a href="#home" onclick="navbar(0)">Home</a>
                         </li>
                         <li class="list__li navbar_li">

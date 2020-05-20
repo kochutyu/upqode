@@ -160,8 +160,6 @@ section {
             position: relative;
 
         }
-
-
     }
 
     &__li_active {
@@ -182,11 +180,151 @@ section {
 
 }
 
+.list__drop-down-menu_open {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    background-color: rgba(0, 0, 0, .85);
+
+    .list__li {
+        right: 0 !important;
+        left: 0;
+        right: 0;
+        margin: 0 0 30px 0;
+    }
+
+    transition: .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.list__drop-down-menu_hiden {
+    position: absolute;
+    left: -100%;
+    bottom: 0;
+    animation: drop-down-btn 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.list__drop-down-menu {
+    background-color: red;
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    position: static;
+
+    .list__li {
+        right: 0 !important;
+        left: 0;
+        right: 0;
+        margin: 0;
+    }
+}
+
+.list__li-drop-down {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(66, 58, 58, 0.7);
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    &_rows {
+        display: block;
+        width: calc(100% - 40%);
+        height: 5px;
+        margin-bottom: 5px;
+        background-color: #fff;
+        position: relative;
+        z-index: 2;
+        animation: drop-down-btn 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+
 .logo {
     margin-left: 26px;
 }
 
 .menu {}
+
+.list__li-drop-down {
+    display: none;
+}
+
+@media screen and (max-width: 1023px) {
+    .list__li-drop-down {
+        display: flex !important;
+    }
+}
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
+*{
+    animation: drop-down-btn 2s linear;
+}
+
+@include keyframes(drop-down-btn) {
+    0% {
+        .list__li-drop-down {
+           &_rows:nth-child(1){
+               background-color: red;
+           }
+        }
+        *{
+            color: red;
+        }
+    }
+
+    100% {
+        .list__li-drop-down {
+            &_rows:nth-child(1) {
+                background-color: red;
+            }
+        }
+        *{
+            color: blue
+        }
+    }
+}
 
 .slider {
     display: flex;
@@ -1019,6 +1157,7 @@ section {
                 width: 100%;
             }
         }
+
         .map-details {
             position: absolute;
             left: 480px;
@@ -1330,7 +1469,7 @@ section {
     }
 }
 
-#service_road{
+#service_road {
     position: relative;
     z-index: 10;
 }

@@ -10,14 +10,14 @@ AOS.init();
 window.addEventListener('scroll', () => { // SCROLL
 
     // CALL FUNCTION
-    fixedNav()
+    // fixedNav()
 })
 
 window.addEventListener('load', () => { // LOAD
 
     // CALL FUNCTION
-    fixedNav()
-    navbar();
+    // fixedNav()
+    // navbar();
 })
 
 //! ----------------------------------------------------------------------
