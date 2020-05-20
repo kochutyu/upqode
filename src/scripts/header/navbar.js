@@ -84,17 +84,7 @@ const navbar = (item = 0) => {
                 navigateByURL = true;
             }, 2000);
         } else li[i].classList.remove('list__li_active')
-
-
-        // if (window.location.hash) {
-
-        // }
     }
-    // console.log(selectLi.getBoundingClientRect().top);
-
-    // console.log(window.location.hash);
-    // setTimeout(function () {
-    // }, 3000);
 }
 
 
@@ -203,20 +193,6 @@ const navigateURL = () => {
         const teamBotom = document.querySelector('.team').getBoundingClientRect().bottom;
         const mapBotom = document.querySelector('.map').getBoundingClientRect().bottom;
 
-        console.log(`
-        headerTop: ${headerTop},
-        headerBottom: ${headerBotom}
-
-        servicesTop: ${servicesTop},
-        servicesBotom: ${servicesBotom}
-
-        teamTop: ${teamTop},
-        teamBotom ${mapBotom}
-
-        mapTop: ${mapTop},
-        mapBotom ${mapBotom}
-        `);
-        
 
         if (headerTop < windowHeight && headerBotom > 0) {
             window.location.hash = '#home'

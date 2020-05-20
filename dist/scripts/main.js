@@ -331,14 +331,8 @@ var navbar = function navbar() {
       setTimeout(function () {
         navigateByURL = true;
       }, 2000);
-    } else li[i].classList.remove('list__li_active'); // if (window.location.hash) {
-    // }
-
-  } // console.log(selectLi.getBoundingClientRect().top);
-  // console.log(window.location.hash);
-  // setTimeout(function () {
-  // }, 3000);
-
+    } else li[i].classList.remove('list__li_active');
+  }
 };
 
 var closeDropDownMenu = true;
@@ -444,7 +438,6 @@ var navigateURL = function navigateURL() {
     var servicesBotom = document.querySelector('.services').getBoundingClientRect().bottom;
     var teamBotom = document.querySelector('.team').getBoundingClientRect().bottom;
     var mapBotom = document.querySelector('.map').getBoundingClientRect().bottom;
-    console.log("\n        headerTop: ".concat(headerTop, ",\n        headerBottom: ").concat(headerBotom, "\n\n        servicesTop: ").concat(servicesTop, ",\n        servicesBotom: ").concat(servicesBotom, "\n\n        teamTop: ").concat(teamTop, ",\n        teamBotom ").concat(mapBotom, "\n\n        mapTop: ").concat(mapTop, ",\n        mapBotom ").concat(mapBotom, "\n        "));
 
     if (headerTop < windowHeight && headerBotom > 0) {
       window.location.hash = '#home';
@@ -564,7 +557,7 @@ function workWithHeader(section) {
 //! CODE
 //! ----------------------------------------------------------------------
 gsap.to("#service_point_oval_1", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.001,
   repeat: -1,
   opacity: 0,
@@ -572,7 +565,7 @@ gsap.to("#service_point_oval_1", {
 }); //percents
 
 gsap.to("#service_point_oval_2", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.004,
   repeat: -1,
   opacity: 0,
@@ -580,70 +573,70 @@ gsap.to("#service_point_oval_2", {
 }); //percents
 
 gsap.to("#service_point_oval_3", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.007,
   repeat: -1,
   opacity: 0
 }); //percents
 
 gsap.to("#service_point_oval_4", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.010,
   repeat: -1,
   opacity: 0
 }); //percents
 
 gsap.to("#service_point_oval_5", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.013,
   repeat: -1,
   opacity: 0
 }); //percents
 
 gsap.to("#service_point_oval_6", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.017,
   repeat: -1,
   opacity: 0
 }); //percents
 
 gsap.to("#service_point_oval_7", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.02,
   repeat: -1,
   opacity: 0
 }); //percents
 
 gsap.to("#service_point_oval_8", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.023,
   repeat: -1,
   opacity: 0
 }); //percents
 
 gsap.to("#service_point_oval_9", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.027,
   repeat: -1,
   opacity: 0
 }); //percents
 
 gsap.to("#service_point_oval_10", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.030,
   repeat: -1,
   opacity: 0
 }); //percents
 
 gsap.to("#service_point_oval_11", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.033,
   repeat: -1,
   opacity: 0
 }); //percents
 
 gsap.to("#service_point_oval_12", {
-  duration: 1,
+  duration: 0.5,
   repeatDelay: 0.037,
   repeat: -1,
   opacity: 0
@@ -656,7 +649,7 @@ gsap.to("#service_point_oval_12", {
 window.addEventListener('scroll', function () {
   // SCROLL
   // CALL FUNCTION
-  animateRoad();
+  animateRoad(); // assignScrollForAnimatePoint()
 });
 window.addEventListener('load', function () {
   // LOAD
@@ -676,10 +669,12 @@ var durationForAnimateOfPoint = 3;
 gsap.registerPlugin(MotionPathPlugin);
 var tween = gsap.to("#service_point", {
   // TWEEN SETTINGS
-  duration: 5,
+  duration: 3,
   repeat: 0,
   repeatDelay: 10,
   yoyo: true,
+  startAt: -200,
+  reversed: false,
   ease: "power1.inOut",
   motionPath: {
     path: "#service_road",
@@ -687,14 +682,15 @@ var tween = gsap.to("#service_point", {
     autoRotate: true,
     alignOrigin: [0.5, 0.5]
   }
-});
+}).pause();
 
 var animateRoad = function animateRoad() {
   var newScrollTop = window.pageYOffset;
   var positionRoadBottom = road.getBoundingClientRect().bottom;
   var positionRoadTop = road.getBoundingClientRect().top;
+  console.log(positionRoadTop);
 
-  if (positionRoadBottom > 0 && positionRoadTop < 800) {
+  if (positionRoadBottom > 0 && positionRoadTop < 700) {
     // GET POSITION FOR START AND FINISH ROAD SVG 
     if (previousScroll < newScrollTop) {
       // SCROLLED DOWN

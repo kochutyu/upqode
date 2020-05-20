@@ -6,6 +6,7 @@ window.addEventListener('scroll', () => { // SCROLL
 
     // CALL FUNCTION
     animateRoad();
+    // assignScrollForAnimatePoint()
 })
 
 window.addEventListener('load', () => { // LOAD
@@ -30,11 +31,13 @@ let durationForAnimateOfPoint = 3;
 
 gsap.registerPlugin(MotionPathPlugin);
 
-const tween = gsap.to("#service_point", { // TWEEN SETTINGS
-    duration: 5,
+let tween = gsap.to("#service_point", { // TWEEN SETTINGS
+    duration: 3,
     repeat: 0,
     repeatDelay: 10,
     yoyo: true,
+    startAt: -200,
+    reversed: false,
     ease: "power1.inOut",
     motionPath: {
         path: "#service_road",
@@ -42,7 +45,7 @@ const tween = gsap.to("#service_point", { // TWEEN SETTINGS
         autoRotate: true,
         alignOrigin: [0.5, 0.5]
     }
-});
+}).pause();
 
 
 
@@ -53,8 +56,9 @@ const animateRoad = () => {
     const positionRoadBottom = road.getBoundingClientRect().bottom;
     const positionRoadTop = road.getBoundingClientRect().top;
 
-    if (positionRoadBottom > 0 && positionRoadTop < 800) { // GET POSITION FOR START AND FINISH ROAD SVG 
-
+    console.log(positionRoadTop);
+    if (positionRoadBottom > 0 && positionRoadTop < 700) { // GET POSITION FOR START AND FINISH ROAD SVG 
+        
 
         if (previousScroll < newScrollTop) { // SCROLLED DOWN
 
@@ -78,3 +82,7 @@ const animateRoad = () => {
 
     previousScroll = newScrollTop;
 }
+
+
+
+
