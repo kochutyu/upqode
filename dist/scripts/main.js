@@ -338,23 +338,26 @@ var navbar = function navbar() {
 var closeDropDownMenu = true;
 
 var dropDownMenu = function dropDownMenu() {
-  // alert('click');
-  if (closeDropDownMenu) {
-    //OPEN DROP MENU
-    gsap.to('list', {
-      top: 0
-    });
-    document.getElementById('drop-menu').classList.remove('list__drop-down-menu_hiden');
-    animateNavBtn().setStyle();
-    closeDropDownMenu = false;
-  } else {
-    // CLOSE DROP MENU
-    gsap.to('list', {
-      top: 0
-    });
-    document.getElementById('drop-menu').classList.add('list__drop-down-menu_hiden');
-    animateNavBtn().resetStyle();
-    closeDropDownMenu = true;
+  var windowWidth = window.innerWidth;
+
+  if (windowWidth < 1024) {
+    if (closeDropDownMenu) {
+      //OPEN DROP MENU
+      gsap.to('list', {
+        top: 0
+      });
+      document.getElementById('drop-menu').classList.remove('list__drop-down-menu_hiden');
+      animateNavBtn().setStyle();
+      closeDropDownMenu = false;
+    } else {
+      // CLOSE DROP MENU
+      gsap.to('list', {
+        top: 0
+      });
+      document.getElementById('drop-menu').classList.add('list__drop-down-menu_hiden');
+      animateNavBtn().resetStyle();
+      closeDropDownMenu = true;
+    }
   }
 };
 

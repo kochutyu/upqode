@@ -90,21 +90,23 @@ const navbar = (item = 0) => {
 
 let closeDropDownMenu = true;
 const dropDownMenu = () => {
-    // alert('click');
-    if (closeDropDownMenu) { //OPEN DROP MENU
-        gsap.to('list', {
-            top: 0
-        })
-        document.getElementById('drop-menu').classList.remove('list__drop-down-menu_hiden');
-        animateNavBtn().setStyle();
-        closeDropDownMenu = false;
-    } else { // CLOSE DROP MENU
-        gsap.to('list', {
-            top: 0
-        })
-        document.getElementById('drop-menu').classList.add('list__drop-down-menu_hiden');
-        animateNavBtn().resetStyle();
-        closeDropDownMenu = true;
+    const windowWidth = window.innerWidth;
+    if (windowWidth < 1024) {
+        if (closeDropDownMenu) { //OPEN DROP MENU
+            gsap.to('list', {
+                top: 0
+            })
+            document.getElementById('drop-menu').classList.remove('list__drop-down-menu_hiden');
+            animateNavBtn().setStyle();
+            closeDropDownMenu = false;
+        } else { // CLOSE DROP MENU
+            gsap.to('list', {
+                top: 0
+            })
+            document.getElementById('drop-menu').classList.add('list__drop-down-menu_hiden');
+            animateNavBtn().resetStyle();
+            closeDropDownMenu = true;
+        }
     }
 }
 
