@@ -676,6 +676,7 @@ section {
         font-weight: 800;
         font-size: 38px;
         line-height: 51px;
+        @include adaptiv-font(38, 20, 0);
         letter-spacing: 0.4px;
         color: #00A031;
     }
@@ -686,6 +687,7 @@ section {
         font-weight: normal;
         font-size: 16px;
         line-height: 24px;
+        @include adaptiv-font(16, 14, 20);
         letter-spacing: 0.2px;
         color: #6C6C6C;
         margin-top: 29px;
@@ -704,6 +706,7 @@ section {
             font-weight: normal;
             font-size: 16px;
             line-height: 24px;
+            @include adaptiv-font(16, 14, 0);
             letter-spacing: 0.2px;
             color: #6C6C6C;
             margin-left: 13px;
@@ -1283,7 +1286,7 @@ section {
     .row {
         .phone {
             transition: 2s linear;
-            opacity: .5;
+            opacity: .2;
         }
     }
 }
@@ -1325,6 +1328,21 @@ section {
         .arrow-right {
             display: none;
         }
+    }
+    .describe{
+        left: 0 !important;
+        &__title,
+        &__subtitle{
+            width: auto !important;
+            position: static !important;
+        }
+        .done-list,
+        &__btn {
+            left: 0 !important;
+        }
+    }
+    .services__row_2{
+        left: 0 !important;
     }
 }
 
