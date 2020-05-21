@@ -262,7 +262,8 @@ var initMap = function initMap() {
 "use strict";
 
 var selectLi = undefined;
-var savedHash = undefined; //! ----------------------------------------------------------------------
+var savedHash = undefined;
+var home = document.getElementById('home-nav'); //! ----------------------------------------------------------------------
 //! WINDOW EVENT
 //! ----------------------------------------------------------------------
 
@@ -279,7 +280,7 @@ window.addEventListener('load', function () {
   // CALL FUNCTION
   fixedNav();
   resizeDropDownMenu();
-  window.scrollTo(0, 0);
+  home.click();
 });
 window.addEventListener('resize', function () {
   // CALL FUNCTION

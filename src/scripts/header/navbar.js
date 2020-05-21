@@ -1,5 +1,7 @@
 let selectLi = undefined;
 let savedHash = undefined;
+const home = document.getElementById('home-nav');
+
 //! ----------------------------------------------------------------------
 //! WINDOW EVENT
 //! ----------------------------------------------------------------------
@@ -20,7 +22,8 @@ window.addEventListener('load', () => { // LOAD
     // CALL FUNCTION
     fixedNav();
     resizeDropDownMenu();
-    window.scrollTo(0, 0)
+    home.click()
+
 })
 
 
