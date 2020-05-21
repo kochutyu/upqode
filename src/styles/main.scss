@@ -343,7 +343,6 @@ section {
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
-        width: 100%;
         @include adaptiv-font(90, 20, 0);
         line-height: 100px;
         letter-spacing: 2px;
@@ -358,7 +357,7 @@ section {
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
-
+        @include adaptiv-font(18, 15, 0);
         line-height: 32px;
         letter-spacing: 0.5px;
         color: #FFFFFF;
@@ -379,31 +378,22 @@ section {
     position: relative;
     z-index: 2;
     top: 305px;
-    left: 4px;
+    left: 16px;
 
 
+    display: flex;
     &__labael {
         position: relative;
+        margin-right: 20px;
 
-        &:nth-child(1) {
-            left: -24px;
-            top: 3px;
-        }
-
-        &:nth-child(2) {
-            bottom: 11px;
-            left: 5px;
-        }
-
-        &:nth-child(3) {
-            left: 33px;
-            bottom: 23px;
+        &:last-child{
+            margin-right: 0;
         }
 
         .radio__fake {
             display: block;
-            width: 13px;
-            height: 13px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background-color: #fff;
             position: relative;
@@ -417,8 +407,8 @@ section {
                 content: '';
                 position: absolute;
                 display: block;
-                width: 17.2px;
-                height: 17.2px;
+                width: 20.2px;
+                height: 20.2px;
                 border: 1px solid #00A031;
                 border-radius: 50%;
                 top: 50%;
@@ -445,7 +435,7 @@ section {
 
 .arrow-left {
     position: absolute;
-    top: 60%;
+    top: 68%;
     left: 169px;
     transform: translate(0, -50%) scale(-1, -1);
 
@@ -462,7 +452,7 @@ section {
 
 .arrow-right {
     position: absolute;
-    top: 60%;
+    top: 70%;
     right: 169px;
     transform: translate(0, -50%);
 
@@ -1307,9 +1297,9 @@ section {
         z-index: 5;
         transform: translate(0, -50%);
 
-        .slider__title,
-        .slider__subtitle {
-            position: static;
+        &__title,
+        &__subtitle {
+            position: static !important;
         }
 
         .slider__title {
@@ -1325,6 +1315,10 @@ section {
             position: absolute;
             left: 50%;
             transform: translate(-50%, 0);
+        }
+
+        &__btn{
+            left: 0 !important;
         }
 
         .arrow-left,
