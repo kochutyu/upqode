@@ -2,18 +2,26 @@ $container: 1206px;
 
 $maxWidth: 1206;
 
-@mixin adaptiv-font($pcSize, $mobSize) {
+@mixin adaptiv-font($pcSize, $mobSize, $marginBottom) {
     $addSize: ($pcSize - $mobSize)*0.55;
     $addMobSize: $addSize + $addSize * 0.7;
     $maxWidth: $maxWidth - 320;
+
     @media (max-width: 1024px) {
         font-size: calc(#{$mobSize + px} + (#{$addMobSize}) * ((100vw - 320px) / #{$maxWidth}));
-        
+        line-height: calc(#{$mobSize + px} + (#{$addMobSize}) * ((100vw - 320px) / #{$maxWidth})*1.5);
+        margin-bottom: #{$marginBottom + px};
     }
+
     @media (min-width: 1024px) {
         font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
     }
 }
+
+@mixin adaptive-margin() {
+    
+}
+
 $color: red;
 
 
@@ -150,4 +158,8 @@ q:after {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+* {
+    overflow-wrap: break-word;
 }

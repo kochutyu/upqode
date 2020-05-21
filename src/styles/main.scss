@@ -281,6 +281,7 @@ section {
         display: flex !important;
     }
 }
+
 @mixin keyframes($name) {
     @-webkit-keyframes #{$name} {
         @content;
@@ -298,18 +299,20 @@ section {
         @content;
     }
 }
-*{
+
+* {
     animation: drop-down-btn 2s linear;
 }
 
 @include keyframes(drop-down-btn) {
     0% {
         .list__li-drop-down {
-           &_rows:nth-child(1){
-               background-color: red;
-           }
+            &_rows:nth-child(1) {
+                background-color: red;
+            }
         }
-        *{
+
+        * {
             color: red;
         }
     }
@@ -320,11 +323,14 @@ section {
                 background-color: red;
             }
         }
-        *{
+
+        * {
             color: blue
         }
     }
 }
+
+
 
 .slider {
     display: flex;
@@ -337,7 +343,8 @@ section {
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
-        font-size: 90px;
+        width: 100%;
+        @include adaptiv-font(90, 20, 0);
         line-height: 100px;
         letter-spacing: 2px;
         text-align: center;
@@ -351,7 +358,7 @@ section {
         font-family: Poppins;
         font-style: normal;
         font-weight: 600;
-        font-size: 18px;
+
         line-height: 32px;
         letter-spacing: 0.5px;
         color: #FFFFFF;
@@ -1287,6 +1294,42 @@ section {
         .phone {
             transition: 2s linear;
             opacity: .5;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .slider {
+        width: inherit;
+        top: 50%;
+        text-align: center;
+        color: #fff;
+        z-index: 5;
+        transform: translate(0, -50%);
+
+        .slider__title,
+        .slider__subtitle {
+            position: static;
+        }
+
+        .slider__title {
+            @include adaptiv-font(90, 20, 10);
+        }
+
+        &__btn {
+            position: static;
+        }
+
+        .slider-radio {
+            bottom: -200%;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        .arrow-left,
+        .arrow-right {
+            display: none;
         }
     }
 }
