@@ -280,10 +280,12 @@ window.addEventListener('load', function () {
   // CALL FUNCTION
   fixedNav();
   resizeDropDownMenu();
+  dropDownMenu();
   home.click();
 });
 window.addEventListener('resize', function () {
   // CALL FUNCTION
+  fixedNav();
   resizeDropDownMenu();
   closeMenu();
 }); //! ----------------------------------------------------------------------
@@ -310,7 +312,10 @@ var fixedNav = function fixedNav() {
   } else {
     // SCROLLED UP
     navbar.classList.remove('nav-fixed');
-    list.setAttribute('style', 'top: -9px;');
+
+    if (windowWidth > 1023) {
+      list.setAttribute('style', 'top: -9px;');
+    }
 
     for (var _i = 0; _i < container.length; _i++) {
       if (_i !== 0) container[_i].setAttribute('style', 'padding-top: 0;');
@@ -469,7 +474,11 @@ var navigateURL = function navigateURL() {
       }
     }
   }
-};
+}; // const fullHeightNavbar = () => {
+//     const scroll = window.pageYOffset;
+//     if (scroll) {
+//     }
+// }
 "use strict";
 
 function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }

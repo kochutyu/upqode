@@ -22,14 +22,15 @@ window.addEventListener('load', () => { // LOAD
     // CALL FUNCTION
     fixedNav();
     resizeDropDownMenu();
+    dropDownMenu();
     home.click()
-
 })
 
 
 window.addEventListener('resize', () => {
 
     // CALL FUNCTION
+    fixedNav();
     resizeDropDownMenu();
     closeMenu();
 })
@@ -60,7 +61,9 @@ const fixedNav = () => {
     } else { // SCROLLED UP
 
         navbar.classList.remove('nav-fixed');
-        list.setAttribute('style', 'top: -9px;')
+        if (windowWidth > 1023) {
+            list.setAttribute('style', 'top: -9px;')
+        }
 
         for (let i = 0; i < container.length; i++) {
 
@@ -229,3 +232,14 @@ const navigateURL = () => {
     }
 
 }
+
+
+
+
+
+// const fullHeightNavbar = () => {
+//     const scroll = window.pageYOffset;
+//     if (scroll) {
+        
+//     }
+// }

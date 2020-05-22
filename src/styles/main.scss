@@ -97,7 +97,7 @@ section {
     position: fixed;
     right: 0;
     transition: 0.2s;
-    z-index: 8;
+    z-index: 100000;
     display: flex;
     width: 100%;
 
@@ -193,7 +193,7 @@ section {
     left: 0;
     right: 0;
     margin: 0;
-    background-color: rgba(0, 0, 0, .85);
+    background-color: rgba(0, 0, 0, .92);
 
     .list__li {
         right: 0 !important;
@@ -472,7 +472,7 @@ section {
     height: 344px;
     background: #222222;
     position: relative;
-    top: 305px;
+    top: 398px;
     text-align: center;
     overflow: hidden;
     transition: 1s;
@@ -1659,6 +1659,14 @@ section {
         transform: translateX(-50%) scale(0.8) !important;
     }
 
+    .map-card {
+
+        &:active,
+        &:hover {
+            z-index: 10 !important;
+        }
+    }
+
 }
 
 @media (max-width: 450px) {
@@ -1681,14 +1689,6 @@ section {
 
     .map {
         overflow: hidden;
-    }
-}
-
-.map-card {
-
-    &:active,
-    &:hover {
-        z-index: 10 !important;
     }
 }
 
