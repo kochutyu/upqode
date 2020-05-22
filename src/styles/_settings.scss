@@ -18,10 +18,6 @@ $maxWidth: 1206;
     }
 }
 
-@mixin adaptive-margin() {
-    
-}
-
 $color: red;
 
 
@@ -163,4 +159,5 @@ table {
 * {
     overflow-wrap: break-word;
     word-wrap: break-word;
+    box-sizing: border-box;
 }
