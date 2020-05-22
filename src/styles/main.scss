@@ -1047,7 +1047,7 @@ section {
             font-weight: bold;
             font-size: 52px;
             line-height: 60px;
-            // width: 270px;
+            @include adaptiv-font(52, 20, 0);
             position: relative;
 
 
@@ -1583,6 +1583,11 @@ section {
         flex-direction: column;
         top: 524px !important;
     }
+
+    .map__locations{
+        flex-direction: column;
+        height: auto;
+    }
 }
 
 @media (max-width: 670px) {
@@ -1636,6 +1641,10 @@ section {
     .slider-user {
         top: 361px !important;
     }
+
+    .map-details{
+        transform: translateX(-50%) scale(0.8) !important;
+    }
 }
 
 @media (max-width: 450px) {
@@ -1650,6 +1659,20 @@ section {
     .slider-user {
         flex-direction: column !important;
         top: 308px !important;
+    }
+
+    .map-card{
+        height: 400px !important;
+    }
+    
+    .map{
+        overflow: hidden;
+    }
+}
+.map-card {
+    &:active,
+    &:hover{
+        z-index: 10 !important;
     }
 }
 
@@ -1675,6 +1698,10 @@ section {
     .describe__social-network {
         margin-right: 20px !important;
 
+    }
+
+    .map-details {
+        transform: translateX(-50%) scale(0.6) !important;
     }
 }
 
