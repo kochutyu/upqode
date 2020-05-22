@@ -866,6 +866,7 @@ section {
     padding-right: 5px;
     width: 665px;
     transition: 1s;
+
     &__info {
         display: flex;
         flex-direction: column;
@@ -881,7 +882,7 @@ section {
         display: flex;
         flex-direction: row-reverse;
 
-        .slider-user__info{
+        .slider-user__info {
             margin-right: 15px !important;
         }
 
@@ -1032,8 +1033,8 @@ section {
     padding-top: 93px;
     display: flex;
     position: relative;
-    top: 113px;
-    overflow: visible;
+    top: 207px;
+    overflow: visible !important;
 
     .map-describe {
         display: flex;
@@ -1189,6 +1190,8 @@ section {
             padding-bottom: 60px;
             flex-direction: column;
             box-shadow: 0 0 40px 5px #bbb;
+            min-width: 322px;
+            min-height: 497px;
 
             &__title {
                 font-family: Poppins;
@@ -1584,7 +1587,7 @@ section {
         top: 524px !important;
     }
 
-    .map__locations{
+    .map__locations {
         flex-direction: column;
         height: auto;
     }
@@ -1642,7 +1645,7 @@ section {
         top: 361px !important;
     }
 
-    .map-details{
+    .map-details {
         transform: translateX(-50%) scale(0.8) !important;
     }
 }
@@ -1661,17 +1664,19 @@ section {
         top: 308px !important;
     }
 
-    .map-card{
+    .map-card {
         height: 400px !important;
     }
-    
-    .map{
+
+    .map {
         overflow: hidden;
     }
 }
+
 .map-card {
+
     &:active,
-    &:hover{
+    &:hover {
         z-index: 10 !important;
     }
 }
