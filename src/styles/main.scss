@@ -523,7 +523,7 @@ section {
                         font-size: 16px;
                         line-height: 16px;
                         /* identical to box height, or 100% */
-
+                        @include adaptiv-font(16, 13, 0);
                         letter-spacing: 3px;
                         text-transform: uppercase;
 
@@ -816,7 +816,7 @@ section {
             font-family: 'Gilroy-Light';
             font-size: 16px;
             line-height: 16px;
-            @include adaptiv-font(16, 14, 0);
+            @include adaptiv-font(16, 11, 0);
 
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -1616,6 +1616,16 @@ section {
     .slider-user__next {
         margin-bottom: 20px !important;
     }
+    .footer{
+        .list{
+            flex-direction: column;
+            transform: translate(-50%, 0) !important;
+            &__li{
+                margin-right: 0 !important;
+                position: static !important;
+            }
+        }
+    }
 }
 
 @media (max-width: 530px) {
@@ -1648,6 +1658,7 @@ section {
     .map-details {
         transform: translateX(-50%) scale(0.8) !important;
     }
+
 }
 
 @media (max-width: 450px) {
