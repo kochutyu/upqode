@@ -219,7 +219,6 @@ const navigateURL = () => {
             const a = nav[i].children[0].textContent.toLocaleLowerCase()
 
             if (a.includes(locationHash)) {
-                // console.log(a);
                 navigateByURL = false;
 
                 nav[i].classList.add('list__li_active');

@@ -55,8 +55,6 @@ const animateRoad = () => {
     const newScrollTop = window.pageYOffset;
     const positionRoadBottom = road.getBoundingClientRect().bottom;
     const positionRoadTop = road.getBoundingClientRect().top;
-
-    console.log(positionRoadTop);
     if (positionRoadBottom > 0 && positionRoadTop < 700) { // GET POSITION FOR START AND FINISH ROAD SVG 
         
 
